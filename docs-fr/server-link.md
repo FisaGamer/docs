@@ -2,10 +2,13 @@
 
 ## Introduction
 
-Afin de pouvoir lier votre serveur avec votre site sous Azuriom, vous aurez trois possibilités:
+Certaines fonctionnalités comme afficher les joueurs en
+ligne ou exécuter des commandes nescessittent de relier votre serveur à votre
+site web, sur Azuriom cela peut être fait de 3 facons différentes:
 
-* Par Ping - **C'est la solution la plus limitée**, elle vous permet juste de récupérer 
-les joueurs connectés de votre serveur. _(ne permets pas d'exécuter des commandes)_
+* Par Ping (**C'est la solution la plus simple, mais aussi la plus limitée**):
+elle vous permet juste de récupérer les joueurs connectés de votre serveur mais
+elle ne permet pas d'exécuter des commandes.
 
 * Par Rcon - **C'est la solution intermédiaire**, elle vous permet de récupérer les informations 
 de votre serveur et d'exécuter des commandes.
@@ -17,7 +20,7 @@ mais avec des fonctionnalités plus poussées _(exemple: un système de statisti
 
 Pour pouvoir lier votre serveur avec votre site sous Azuriom par ping, 
 vous avez juste à ajouter un nouveau serveur avec comme type de liaison "Ping"
-et remplir les informations demandées _(le port par défaut est 25565)_.
+et remplir les informations demandées _(le port par défaut de Minecraft est `25565`)_.
 
 ## Liaison par Rcon
 
@@ -35,20 +38,21 @@ Vous devez:
 3. Vous rendre sur votre site et ajouter un nouveau serveur avec comme type de liaison "Rcon"
 et remplir les informations demandées. _(le port Rcon par defaut est 25575)_
 
-## Liaison par Plugin
+## Liaison par plugin (AzLink)
 
 ### Qu'est-ce que AzLink ?
 
-AzLink est un plugin de liaison site-serveur spécialement conçu pour Azuriom 
+AzLink est un plugin de liaison site-serveur spécialement conçu pour et par Azuriom 
 afin de vous permettre de lier votre serveur à votre site de façon simple, rapide et sécurisée.
-AzLink supporte Bukkit, BungeeCord, Sponge et Velocity dans le même plugin. Une version legacy est disponible
-pour Bukkit 1.7.10.
+
+Actuellement AzLink supporte Bukkit/Spigot, BungeeCord, Sponge et Velocity dans le même plugin.
+Une version legacy est disponible pour les serveurs utilisant Bukkit 1.7.10.
 
 ### Installation
 
 1. Télécharcher AzLink sur [notre site](https://azuriom.com/azlink)
 
-2. Installer le sur votre serveur dans le dossier `Plugin/` et redémarrer votre serveur
+2. Installer le sur votre serveur dans le dossier `plugin/` et redémarrer votre serveur
 
 3. Vous rendre sur votre site et ajouter un nouveau serveur avec comme type de liaison "AzLink", 
 suivre les étapes de liaison et remplir les informations demandées.

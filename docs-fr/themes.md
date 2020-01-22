@@ -4,15 +4,18 @@
 
 Un thème permet de personnaliser entièrement l'apparence d'un site utilisant Azuriom.
 
-## Structuration d'un thème
-
-Pour installer un thème il suffit de mettre celui-là dans le dossier `themes/` à
+Pour installer un thème il suffit de placer celui-ci dans le dossier `resources/themes/` à
 la racine de votre site.
+
+## Création d'un thème
+
+### Structuration d'un thème
 
 ```
 themes/  <-- Dossier contenant tous les thèmes installés
 |  example/  <-- Slug de votre thème (nom de votre thème en minuscule)
 |  |  theme.json  <-- Le fichier principal de votre thème contenant les différentes informations
+|  |  assets/  <-- Le dossier contenant les assets de votre thème (css, js, images, svg, etc)
 |  |  views/  <-- Le dossier contenant les vues de votre thème
 |  |  config/
 |  |  |  config.json
@@ -20,12 +23,10 @@ themes/  <-- Dossier contenant tous les thèmes installés
 |  |  |  rules.php
 ```
 
-## Création d'un thème
-
 ### Le fichier theme.json
 
 Tous les thèmes ont besoin d'avoir un fichier `theme.json` à leur racine, c'est
-le seul élément indispensable pour un thème et il ressemble à ça:
+le seul élément indispensable pour un thème et il se présente sous cette forme:
 ```json
 {
     "name": "Exemple",
@@ -46,8 +47,9 @@ php artisan theme:create <nom du thème>
 
 ### Les vues
 
-Les vues sont le coeur de votre thème, ce sont les fichiers content l'HTML de
-votre thème pour les différentes parties du site.
+Les vues sont le coeur de d'un thème, ce sont les fichiers content l'HTML de
+d'un thème pour afficher les différentes parties du site.
+
 Azuriom utilisant [Laravel](https://laravel.com/), les vues peuvent être faites en utilisant le moteur
 de template Blade. Si vous ne maitrisez pas Blade il est très vivement recommandé
 de lire [sa documentation](https://laravel.com/docs/6.x/blade), d'autant plus que celle-ci est assez courte.
@@ -57,7 +59,7 @@ traditionnelle lorsque vous travaillez avec Blade, en effet celle-ci n'apporte
 aucun avantage et seulement des inconvénients.
 
 Côté CSS, il est recommandé d'utiliser framework par défaut du cms qui est [Bootstrap 4](https://getbootstrap.com/), 
-cela permettra de réaliser plus facilement votre thème et sera compatible avec les nouveaux plugins 
+cela permettra de réaliser plus facilement un thème et sera compatible avec les nouveaux plugins 
 ce qui vous évitera de faire des mises à jour constamment.
 Mais vous pouvez bien évidemment utiliser le framework CSS de votre choix.
 
@@ -66,7 +68,7 @@ Côté Javascript, jQuery n'est pas obligatoire, seul [Axios](https://github.com
 #### Le layout
 
 Le layout est la structure de l'ensemble des pages de votre thème. Il contient
-en effet les metas, assets de votre thème, header, footer etc.
+en effet les metas, assets du thème, header, footer etc.
 
 Pour afficher le contenu de la page actuelle, vous pouvez utiliser
 `@yield('content')`, et pour afficher le titre de la page actuelle vous pouvez
@@ -80,7 +82,7 @@ inclure la navbar.
 
 #### Assets
 
-Pour avoir le lien vers un asset de votre thème vous pouvez utiliser la fonction
+Pour avoir le lien vers un asset de du thème vous pouvez utiliser la fonction
 `theme_asset`: 
 ```html
 <link rel="stylesheet" href="{{ theme_asset('css/style.css') }}">
@@ -91,7 +93,7 @@ Pour avoir le lien vers un asset de votre thème vous pouvez utiliser la fonctio
 Un thème peut, si il en a besoin, charger des traductions.
 
 Pour cela il suffit de créer un fichier `messages.php` dans le dossier `lang/<lang>` (ex: `lang/fr`)
-de votre thème, vous pouvez ensuite affichez une traduction via la fonction
+du thème, vous pouvez ensuite affichez une traduction via la fonction
 trans: `{{ trans('theme::messages.hello') }}` ou via la directive `@lang`: 
 `@lang('theme::messages.hello')`.
 Vous pouvez également utiliser `trans_choice` pour une traduction comportant des
