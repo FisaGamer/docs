@@ -2,9 +2,11 @@
 
 ## Introduction
 
-In order to be able to link your server with your site under Azuriom, you will have three possibilities:
+Some features such as displaying players online or
+execute commands that require you to link your server to your
+website, on Azuriom this can be done in 3 different ways:
 
-* By Ping - **This is the most limited solution**, it just allows you to get 
+* By Ping - **This is the simplest, but also the most limited solution**, it just allows you to get 
 the players connected to your server. _(does not allow to execute commands)_
 
 * By Rcon - **This is the intermediate solution**, it allows you to retrieve the information 
@@ -17,7 +19,7 @@ but with more advanced functionalities _(example: an advanced statistics system)
 
 To be able to link your server with your site under Azuriom by ping, 
 you just have to add a new server with "Ping" as the link type.
-and fill in the requested information _(the default port is 25565)_.
+and fill in the requested information _(the default port of Minecraft is `25565`)_.
 
 ## link by Rcon
 
@@ -39,16 +41,17 @@ and fill in the requested information. _(Default Rcon port is 25575)_.
 
 ### What is AzLink ?
 
-AzLink is a site-to-server link plugin specially designed for Azuriom. 
+AzLink is a site-to-server link plugin specially designed for and by Azuriom. 
 to allow you to link your server to your site simply, quickly and securely.
-AzLink supports Bukkit, BungeeCord, Sponge and Velocity in the same plugin. A legacy version is available
+
+AzLink currently supports Bukkit, BungeeCord, Sponge and Velocity in the same plugin. A legacy version is available
 for Bukkit 1.7.10.
 
 ### Installation
 
 1. Download AzLink from [our site](https://azuriom.com/azlink)
 
-2. Install it on your server in the `Plugin/` folder and restart your server.
+2. Install it on your server in the `plugin/` folder and restart your server.
 
 3. Go to your site and add a new server with the link type "AzLink", 
 follow the link steps and fill in the requested information.

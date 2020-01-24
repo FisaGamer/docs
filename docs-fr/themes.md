@@ -67,7 +67,7 @@ Côté Javascript, jQuery n'est pas obligatoire, seul [Axios](https://github.com
 
 #### Le layout
 
-Le layout est la structure de l'ensemble des pages de votre thème. Il contient
+Le layout est la structure de l'ensemble des pages d'un thème. Il contient
 en effet les metas, assets du thème, header, footer etc.
 
 Pour afficher le contenu de la page actuelle, vous pouvez utiliser
@@ -125,11 +125,11 @@ dédiées:
 
 ### Configuration du thème
 
-Vous pouvez ajouter une configuration dans votre thème, pour cela il vous suffit
-de créer à la racine de votre thème:
+Vous pouvez ajouter une configuration dans un thème, pour cela il vous suffit
+de créer à la racine du thème:
 * Une vue `config/config.blade.php` contenant le form pour la configuration
 * Un fichier `config/rules.php` contenant les différentes règles de validation pour
-la configuration de votre thème.
+la configuration d'un thème.
 * Un fichier `config.json` ou sera stocké la configuration du thème, et contenant les valeurs par défaut 
 
 ##### Exemple:

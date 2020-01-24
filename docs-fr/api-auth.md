@@ -14,6 +14,7 @@ dépendance de la facon suivante:
 > {warn} Le repo Maven n'est pas encore disponible mais il le sera très prochainement !
 
 ### Gradle
+
 Dans le `build.gradle`:
 
 ```groovy
@@ -28,6 +29,7 @@ dependencies {
 ```
 
 ### Maven
+
 Dans le `pom.xml`:
 ```xml
 <repositories>
@@ -57,7 +59,7 @@ dans les réglages de votre site, sur votre panel admin.
 
 Pour commencer, ajoutez AzAuth en dépendance à votre projet.
 Également si vous utilisez [OpenAuth](https://github.com/Litarvan/OpenAuth/), il est recommandé de le retirer,
-bien que ne causant pas de réels problèmes, il n'est sera simeplement plus utilisé si vous utilisez AzAuth.
+bien que ne causant pas de réels problèmes, il ne sera simplement plus utilisé si vous utilisez AzAuth.
 
 Vous devriez avoir dans le code de votre launcher une méthode `auth` ressemblant au code ci-dessous:
 ```java
@@ -67,7 +69,7 @@ Vous devriez avoir dans le code de votre launcher une méthode `auth` ressemblan
 		authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
 	}
 ```
-Il vous suffit de la remplacer par le code ci dessous, en remplacant `<url>` par l'url à la racine de votre site sous Azuriom.
+Il vous suffit de la remplacer par le code ci dessous, en remplaçant `<url>` par l'url à la racine de votre site sous Azuriom.
 ```java
 	public void auth(String username, String password) throws AuthException, IOException {
 		AzAuthenticator authenticator = new AzAuthenticator("<url>");
@@ -79,5 +81,5 @@ Une fois ceci fait, AzAuth est intégré à votre launcher.
 ### Utilisation sans OpenLauncherLib
 
 AzAuth a été conçu avec comme seule dépendance [Gson](https://github.com/google/gson), vous pouvez donc parfaitement l'utiliser si vous n'utilisez pas
-OpenLauncherLib, vous pouvez simplement utiliser `AzAuthenticator#authenticate(String username, String password)` et cela
+OpenLauncherLib, vous pouvez simplement utiliser `AzAuthenticator#authenticate(String username, String password)` et cela va
 vous donner directement un `AuthResult` contenant le pseudo, l'uuid, le grade, l'access token et pleins d'autres données utiles.

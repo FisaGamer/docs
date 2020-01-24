@@ -4,23 +4,24 @@
 
 A theme allows you to fully customize the look and feel of a website using Azuriom.
 
-## Structuring a theme
-
-To install a theme, just put it in the `themes/` folder at
+To install a theme, just put it in the `resources/themes/` folder at
 the root of your website.
+
+## Creating a theme
+
+### Structuring a theme
 
 ```
 themes/ <-- Folder containing all installed themes
 | example/ <-- Slug of your theme (name of your theme in lower case)
 | | theme.json <-- The main file of your theme containing the various informations
+| |  assets/  <-- The folder containing the assets of your theme (css, js, images, svg, etc)
 | | views/ <-- The folder containing the views of your theme.
 | | config/
 | | | config.json
 | | | config.blade.php
 | | | rules.php
 ```
-
-## Creating a theme
 
 ### The theme.json file
 
@@ -46,8 +47,9 @@ php artisan theme:create <theme name>
 
 ### The views
 
-The views are the heart of your theme, they are the HTML content files of
-your theme for the different parts of the website.
+The views are the heart of a theme, they are the HTML content files of
+a theme for the different parts of the website.
+
 Azuriom using [Laravel](https://laravel.com/), views can be made using the
 of template Blade. If you don't master Blade it is highly recommended
 to read [his documentation](https://laravel.com/docs/6.x/blade), especially since it is quite short.
@@ -57,7 +59,7 @@ when you work with Blade, because Blade does not bring you the traditional
 no advantages and only disadvantages.
 
 On the CSS side, it is recommended to use the default framework of the cms which is [Bootstrap 4](https://getbootstrap.com), 
-this will make it easier to realize your theme and will be compatible with the new plugins. 
+this will make it easier to realize a theme and will be compatible with the new plugins. 
 so you don't have to make constant updates.
 But you can of course use the CSS framework of your choice.
 
@@ -65,8 +67,8 @@ On the Javascript side, jQuery is not mandatory, only [Axios](https://github.com
 
 #### The layout
 
-The layout is the structure of all the pages of your theme. It contains
-indeed the metas, assets of your theme, header, footer etc..
+The layout is the structure of all the pages of a theme. It contains
+indeed the metas, assets of a theme, header, footer etc..
 
 To display the content of the current page you can use
 `@yield('content')`, and to display the title of the current page you can
@@ -80,7 +82,7 @@ include the navbar.
 
 #### Assets
 
-To have the link to an asset in your theme you can use the function
+To have the link to an asset in a theme you can use the function
 `theme_asset`: 
 ```html
 <link rel="stylesheet" href="{{ theme_asset('css/style.css') }}">
@@ -91,7 +93,7 @@ To have the link to an asset in your theme you can use the function
 A theme can, if it needs it, load translations.
 
 To do so, just create a `messages.php` file in the `lang/<language>` directory (ex: `lang/en`).
-of your theme, you can then display a translation via the
+of a theme, you can then display a translation via the
 trans: `{{ trans('theme::messages.hello') }}` or via the `@lang` directive: 
 `@lang('theme::messages.hello')`.
 You can also use `trans_choice` for a translation with
@@ -123,11 +125,11 @@ dedicated:
 
 ### Theme setup
 
-You can add a configuration in your theme, to do so you just have to
-to create at the root of your theme:
+You can add a configuration in a theme, to do so you just have to
+to create at the root of a theme:
 * A `config/config.blade.php` view containing the form for the configuration.
 * A `config/rules.php` file containing the different validation rules for
-the configuration of your theme.
+the configuration of a theme.
 * A `config.json` file where the theme configuration will be stored, and containing the default values. 
 
 ##### Example:

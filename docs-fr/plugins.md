@@ -16,7 +16,7 @@ Avant de créer un plugin, il est recommandé de lire la
 
 ```
 plugins/  <-- Dossier contenant les différents plugins installés
-|  example/  <-- Slug de votre plugin (nom de votre pluin en minuscule)
+|  example/  <-- Slug de votre plugin (nom de votre plugin en minuscule)
 |  |  plugin.json  <-- Le fichier principal de votre thème contenant les différentes informations
 |  |  assets/  <-- Le dossier contenant les assets de votre plugin (css, js, images, svg, etc)
 |  |  database/
@@ -36,7 +36,7 @@ contient les différentes informations d'un plugin:
 {
     "name": "Exemple",
     "version": "1.0.0",
-    "description": "Un super thème",
+    "description": "Un super plugin",
     "url" : "https://azuriom.com",
     "authors": [
         "Azuriom"
@@ -49,7 +49,7 @@ contient les différentes informations d'un plugin:
 ```
 
 > {info} Pour créer un plugin vous pouvez utiliser la commande suivante qui va
-générer automatiquement le dossier du plugin ainsi que de nombreux fichier par
+générer automatiquement le dossier du plugin ainsi que de nombreux fichiers par
 défaut:
 ```
 php artisan plugin:create <nom du plugin>
@@ -57,19 +57,20 @@ php artisan plugin:create <nom du plugin>
 
 ### Routes
 
-Les routes permettent d'asocier une URL à une action en particulier.
+Les routes permettent d'associer une URL à une action en particulier.
 
 Elles sont enregistrées dans le dossier `routes` à la racine du plugin.
 
 Pour plus d'informations sur le fonctionnement des routes vous pouvez lire la
 [documentation de Laravel](https://laravel.com/docs/6.x/routing).
 
+Exemple:
 ```php
 Route::get('/support', 'SupportController@index')->name('index');
 ```
 
 > {warn} Veuillez faire attention à ne pas utiliser de routes avec des closures,
-car celles ci ne sont pas compatibles avec certaines optimisations du CMS.
+car celles-ci ne sont pas compatibles avec certaines optimisations du CMS.
 
 ### Vues
 
@@ -91,12 +92,13 @@ du plugin support.
 ### Contrôleurs
 
 Les contrôleurs sont une partie centrale d'un plugin, ils se trouvent dans le dossier
-`src/Controllers` à la racine du plugin et c'est eux qui s'occuppent
+`src/Controllers` à la racine du plugin et c'est eux qui s'occupent
 de transformer une reqûete en la réponse qui sera renvoyée à l'utilisateur.
 
 Pour plus d'informations sur le fonctionnement des contrôleurs vous pouvez lire la
 [documentation de Laravel](https://laravel.com/docs/6.x/controllers).
 
+Exemple:
 ```php
 <?php
 
@@ -128,14 +130,15 @@ class TicketController extends Controller
 ### Modèles
 
 Les modèles représentent une entrée dans une table de la base de données, et permettent
-d'intéragir avec la base de données.
+d'interagir avec la base de données.
 
 Vous pouvez également définir dans un modèle les différentes relations de celui-ci,
-par exemple un `Ticket` peut avoir un `User` et une `Category`, et avoir des `Comment`s.
+par exemple un `ticket` peut avoir un `user` et une `category`, et avoir des `Comments`.
 
 Vous pouvez trouver plus d'informations sur les modèles (aussi appelés Eloquent sur Laravel) dans la
 [documentation de Laravel](https://laravel.com/docs/6.x/eloquent).
 
+Exemple:
 ```php
 <?php
 
@@ -205,7 +208,9 @@ class Ticket extends Model
 Les services providers sont le coeur d'un plugin, ils sont appelés à l'initialisation
 de Laravel, et permettent d'enregistrer les différentes parties d'un plugin (vues, traductions, middlewares, etc).
 
-Les services providers doivent être ajoutés dans la partie `providers` du `plugins.json`:
+Les services providers doivent être ajoutés dans la partie `providers` du `plugins.json`.
+
+Exemple:
 ```json
 {
     "providers": [
@@ -322,7 +327,7 @@ Vous pouvez trouver plus d'informations sur les traductions dans la
 [documentation de Laravel](https://laravel.com/docs/6.x/localization).
 
 Pour récupérer une traduction vous pouvez utiliser la fonction
-`trans('<nom de votre plugin>::<nom du fichier>.<message>`), par exemple
+`trans('<nom de votre plugin>::<nom du fichier>.<message>')`, par exemple
 `trans('support::messages.tickets.home')` pour afficher le message `tickets.home`,
 dans le fichier `messages.php` du plugin support:
 ```php
@@ -330,7 +335,7 @@ dans le fichier `messages.php` du plugin support:
 
 return [
   'tickets' => [
-    'home' => 'Your tickets',
+    'home' => 'Vos tickets',
   ],
 ];
 ```

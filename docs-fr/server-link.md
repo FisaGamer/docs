@@ -3,12 +3,12 @@
 ## Introduction
 
 Certaines fonctionnalités comme afficher les joueurs en
-ligne ou exécuter des commandes nescessittent de relier votre serveur à votre
+ligne ou exécuter des commandes nécessitent de relier votre serveur à votre
 site web, sur Azuriom cela peut être fait de 3 facons différentes:
 
-* Par Ping (**C'est la solution la plus simple, mais aussi la plus limitée**):
-elle vous permet juste de récupérer les joueurs connectés de votre serveur mais
-elle ne permet pas d'exécuter des commandes.
+* Par Ping **C'est la solution la plus simple, mais aussi la plus limitée**:
+elle vous permet juste de récupérer les joueurs connectés de votre serveur. 
+_(ne permets pas d'exécuter des commandes)_
 
 * Par Rcon - **C'est la solution intermédiaire**, elle vous permet de récupérer les informations 
 de votre serveur et d'exécuter des commandes.
