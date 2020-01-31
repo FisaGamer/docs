@@ -94,7 +94,7 @@ Pour afficher une vue vous pouvez utiliser `view('<slug du plugin>::<nom de votr
 par exemple `view('support::tickets.index')` pour afficher la vue `tickets.index`
 du plugin support.
 
-Pour définir le layout de la page, il faut que la vue extends de la vue contenant
+Pour définir le layout de la page, il faut que la vue étende la vue contenant
 le layout, vous pouvez soit utiliser le layout par défaut (ou du thème si il y en a)
 avec `@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
 
@@ -118,8 +118,8 @@ et le titre de la page dans la section `title`.
 #### Vue admin
 
 Pour qu'une page utilise le layout du panel admin il suffit d'utiliser le layout
-admin.layouts.admin, et il est également recommandé de créer un dossier admin
-dans le dossier resources, et d'y placer les vues admin dedans.
+`admin.layouts.admin`, il est également recommandé de créer un dossier admin
+dans le dossier `resources` et d'y placer les vues admin dedans.
 
 ### Contrôleurs
 
@@ -165,7 +165,7 @@ Les modèles représentent une entrée dans une table de la base de données, et
 d'interagir avec la base de données.
 
 Vous pouvez également définir dans un modèle les différentes relations de celui-ci,
-par exemple un `ticket` peut avoir un `user` et une `category`, et avoir des `Comments`.
+par exemple un `ticket` peut avoir un `user` et une `category`, et avoir des `comments`.
 
 Vous pouvez trouver plus d'informations sur les modèles (aussi appelés Eloquent sur Laravel) dans la
 [documentation de Laravel](https://laravel.com/docs/6.x/eloquent).

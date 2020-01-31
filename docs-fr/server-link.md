@@ -8,7 +8,7 @@ site web, sur Azuriom cela peut être fait de 3 facons différentes:
 
 * Par Ping **C'est la solution la plus simple, mais aussi la plus limitée**:
 elle vous permet juste de récupérer les joueurs connectés de votre serveur. 
-_(ne permets pas d'exécuter des commandes)_
+_(ne permet pas d'exécuter des commandes)_
 
 * Par Rcon - **C'est la solution intermédiaire**, elle vous permet de récupérer les informations 
 de votre serveur et d'exécuter des commandes.
@@ -24,7 +24,7 @@ et remplir les informations demandées _(le port par défaut de Minecraft est `2
 
 ## Liaison par Rcon
 
-Pour pouvoir lier votre serveur avec votre site sous Azuriom par Rcon, 
+Pour pouvoir lier votre serveur avec votre site sous Azuriom par Rcon,
 Vous devez:
 
 1. Vous rendre dans le fichier `server.properties` de votre serveur
@@ -32,11 +32,11 @@ Vous devez:
 2. Configurer ce fichier de la façon suivante:
     * Mettre `enable-rcon` en `true`
     * Mettre `rcon.password` avec `votre-mot-de-passe`
-    * Mettre `rcon.port` avec `votre-port` _(par défaut 25575)_
+    * Mettre `rcon.port` avec `votre-port` _(par défaut `25575`)_
     * Sauvegarder et redémarrer votre serveur
    
 3. Vous rendre sur votre site et ajouter un nouveau serveur avec comme type de liaison "Rcon"
-et remplir les informations demandées. _(le port Rcon par defaut est 25575)_
+et remplir les informations demandées. _(le port Rcon par defaut est `25575`)_
 
 ## Liaison par plugin (AzLink)
 

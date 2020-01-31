@@ -72,6 +72,10 @@ Route::get('/support', 'SupportController@index')->name('index');
 > {warn} Please be careful not to use roads with closures,
 as these are not compatible with some CMS optimizations.
 
+#### Admin routes
+ 
+For a route to be in the admin panel, just place it in the file `routes/admin.php` of the plugin.
+
 ### Views
 
 The views are the visible part of a plugin, they are the content files HTML
@@ -88,6 +92,33 @@ no advantages and only disadvantages.
 To display a view you can use `view('<plugin slug>::<name of your view>')`,
 of example `view('support::tickets.index')` to display the `tickets.index` view
 of the support plugin.
+
+To define the layout of the page, it is necessary that the view extends the view containing
+the layout, you can either use the default layout (or the theme layout if there is one)
+with `@extends('layouts.app')`, or create your own layout and extend it.
+
+Then put all the main content into the `content` section,
+and the title of the page in the `title` section.
+
+```html
+@extends('layouts.app')
+
+@section('title', 'Page name')
+
+@section('content')
+    <div class="container content">
+        <h1>A title</h1>
+
+        <p>A text</p>
+    </div>
+@endsection
+```
+
+#### Admin view
+
+For a page to use the admin panel layout, just use the layout
+`admin.layouts.admin`, it is also recommended to create an admin folder
+in the `resources` folder and put the admin views in it.
 
 ### Controllers
 
