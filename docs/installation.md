@@ -67,9 +67,14 @@ composer install --optimize-autoloader --no-dev
 php artisan migrate --seed
 ```
 
-7. Configure your web server to point to the `public/` folder _(Optional but highly recommended)_
+7. Create an admin account _(Optional but recommended)_:
+```
+php artisan artisan user:create --admin
+```
 
-8. Setup the scheduler _(Optional but recommended)_:
+8. Configure your web server to point to the `public/` folder _(Optional but highly recommended)_
+
+9. Setup the scheduler _(Optional but recommended)_:
 
 You need to configure your web server to run the `php artisan schedule:run` command every minute, for example by adding a Cron entry:
  ```

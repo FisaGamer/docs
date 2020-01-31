@@ -72,6 +72,11 @@ Route::get('/support', 'SupportController@index')->name('index');
 > {warn} Veuillez faire attention à ne pas utiliser de routes avec des closures,
 car celles-ci ne sont pas compatibles avec certaines optimisations du CMS.
 
+#### Routes admin
+ 
+ Pour qu'une route soit dans le panel admin, il suffit de la placer dans le fichier
+ `routes/admin.php` du plugin.
+
 ### Vues
 
 Les vues sont la partie visible d'un plugin, ce sont les fichiers content l'HTML
@@ -88,6 +93,33 @@ aucun avantage et seulement des inconvénients.
 Pour afficher une vue vous pouvez utiliser `view('<slug du plugin>::<nom de votre vue>')`,
 par exemple `view('support::tickets.index')` pour afficher la vue `tickets.index`
 du plugin support.
+
+Pour définir le layout de la page, il faut que la vue extends de la vue contenant
+le layout, vous pouvez soit utiliser le layout par défaut (ou du thème si il y en a)
+avec `@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
+
+Ensuite il faudra mettre tout le contenu principal au sein de la section `content`,
+et le titre de la page dans la section `title`.
+
+```html
+@extends('layouts.app')
+
+@section('title', 'Nom de la page')
+
+@section('content')
+    <div class="container content">
+        <h1>Un titre</h1>
+
+        <p>Un texte</p>
+    </div>
+@endsection
+```
+
+#### Vue admin
+
+Pour qu'une page utilise le layout du panel admin il suffit d'utiliser le layout
+admin.layouts.admin, et il est également recommandé de créer un dossier admin
+dans le dossier resources, et d'y placer les vues admin dedans.
 
 ### Contrôleurs
 
