@@ -81,3 +81,63 @@ You need to configure your web server to run the `php artisan schedule:run` comm
 * * * * * cd /path-to-azuriom && php artisan schedule:run >> /dev/null 2>&1
  ```
 This can be done by modifying the crontab configuration with the `crontab -e` command.
+
+## Web server configuration
+
+### Apache 2
+
+If you are using Apache 2, it may be necessary to enable url rewriting.
+
+To do this you need to modify the `/etc/apache2/sites-available/000-default.conf` file
+and add the following lines between the `<VirtualHost>` tags (replacing
+`var/www/azuriom` by site location):
+```xml
+<Directory "/var/www/azuriom">
+    Options FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+```
+
+Then you will have to restart Apache 2:
+```
+service apache2 restart
+```
+
+## Nginx
+
+If you are deploying Azuriom on a server that uses Nginx, you can use
+the following configuration:
+```
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/azuriom/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.html index.htm index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+```
+
+Just remember to replace `example.com` with your domain and `/var/www/azuriom`.
+by the location of the site.

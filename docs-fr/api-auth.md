@@ -1,7 +1,7 @@
 # AzAuth
 
-AzAuth est une api qui permet d'authentifier les utilisateurs d'un site sous Azuriom sur n'importe quelles plateformes
-(comme par exemple un launcher Minecraft personalisé).
+AzAuth est une api qui permet d'authentifier les utilisateurs d'un site sous Azuriom sur n'importe quelle plateforme
+(comme par exemple un launcher Minecraft personnalisé).
 
 ## Téléchargement
 
