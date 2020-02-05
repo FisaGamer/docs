@@ -20,7 +20,7 @@ plugins/  <-- Dossier contenant les différents plugins installés
 |  |  plugin.json  <-- Le fichier principal de votre thème contenant les différentes informations
 |  |  assets/  <-- Le dossier contenant les assets de votre plugin (css, js, images, svg, etc)
 |  |  database/
-|  |  | migrations/ <-- Le dossier contenant les migrations de votre plugin
+|  |  |  migrations/ <-- Le dossier contenant les migrations de votre plugin
 |  |  resources/
 |  |  |  lang/  <-- Le dossier contenant les traductions de votre plugin
 |  |  |  views/  <-- Le dossier contenant les vues de votre plugin

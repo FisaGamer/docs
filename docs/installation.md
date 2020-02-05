@@ -69,7 +69,7 @@ php artisan migrate --seed
 
 7. Create an admin account _(Optional but recommended)_:
 ```
-php artisan artisan user:create --admin
+php artisan user:create --admin
 ```
 
 8. Configure your web server to point to the `public/` folder _(Optional but highly recommended)_
