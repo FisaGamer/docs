@@ -34,18 +34,37 @@ Azuriom peut être installé de deux façons différentes:
 
 2. Extraire l'archive à la racine de votre site web.
 
-3. Se rendre sur `votre-site.fr/install.php` et suivre les étapes de l'installation.
+3. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
+```
+chmod -R 770 storage bootstrap/cache resources/themes plugins
+```
+  * Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
+  il peut être nécessaire de changer le propriétaire des fichiers:
+```
+chown -R www-data:www-data /var/www/azuriom
+```
+ (en remplaçant `var/www/azuriom` par l'emplacement du site et `www-data` par
+ l'utilisateur du serveur web)
+
+4. Se rendre sur `votre-site.fr/install.php` et suivre les étapes de l'installation.
 
 ### Installation Manuelle
 
 1. Cloner le repos GitHub (https://github.com/Azuriom/Azuriom.git) ou [télécharger une release](https://github.com/Azuriom/Azuriom/releases).
 
-2. Copier le fichier `.env.example` vers `.env` et indiquer les informations de connexion à la base de données
+2. Copier le fichier `.env.example` vers `.env` et indiquer les informations de connexion à la base de données.
 
 3. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
 ```
 chmod -R 770 storage bootstrap/cache resources/themes plugins
 ```
+  * Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
+  il peut être nécessaire de changer le propriétaire des fichiers:
+```
+chown -R www-data:www-data /var/www/azuriom
+```
+ (en remplaçant `var/www/azuriom` par l'emplacement du site et `www-data` par
+ l'utilisateur du serveur web)
 
 4. Générer la clé secrète:
 ```
@@ -78,9 +97,10 @@ php artisan user:create --admin
 
 Vous devez configurer votre serveur pour que la commande `php artisan schedule:run` soit exécutée toutes les minutes, par exemple en ajoutant une entrée Cron:
  ```
-* * * * * cd /chemin-vers-azuriom && php artisan schedule:run >> /dev/null 2>&1
+* * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
  ```
-Cela peut être fait en modifiant la configuration de crontab avec la commande `crontab -e`.
+Cela peut être fait en modifiant la configuration de crontab avec la commande `crontab -e`
+(n'oubliez pas de remplacer `/var/www/azuriom` par l'emplacement du site).
 
 ## Configuration du serveur web
 
@@ -88,10 +108,16 @@ Cela peut être fait en modifiant la configuration de crontab avec la commande `
 
 Si vous utilisez Apache 2, il peut être nécessaire d'activer la réécriture d'url.
 
-Pour cela il faut modifier le fichier `/etc/apache2/sites-available/000-default.conf`
+Pour cela, commencez par activer le mod "rewrite" avec la commande suivante:
+```
+a2enmod rewrite
+```
+
+Ensuite vous pouverz configurer le site pour autoriser la réécriture d'url.
+Il faut simplement modifier le fichier `/etc/apache2/sites-available/000-default.conf`
 et y ajouter les lignes suivantes entre les balises `<VirtualHost>` (en remplaçant
 `var/www/azuriom` par l'emplacement du site):
-```xml
+```
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
@@ -99,7 +125,7 @@ et y ajouter les lignes suivantes entre les balises `<VirtualHost>` (en remplaç
 </Directory>
 ```
 
-Ensuite il faudra redémarrer Apache 2:
+Pour finir, il faut juste redémarrer Apache 2:
 ```
 service apache2 restart
 ```

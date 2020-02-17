@@ -72,7 +72,7 @@ en effet les metas, assets du thème, header, footer etc.
 
 Pour afficher le contenu de la page actuelle, vous pouvez utiliser
 `@yield('content')`, et pour afficher le titre de la page actuelle vous pouvez
-utiliser `@yield('title')`
+utiliser `@yield('title')`.
 
 Également vous pouvez intégrer différents éléments avec
 `@include('<nom de la vue>')`, par exemple `@include('element.navbar')` pour

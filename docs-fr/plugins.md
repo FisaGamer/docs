@@ -353,7 +353,7 @@ class CreateSupportTicketsTable extends Migration
 
 Les traductions permettent de traduire un plugin (incroyable), elles se trouvent
 dans le dossier `resources/lang` à la racine d'un plugin, dans le dossier de la 
-langue (`en`, `fr`, etc)
+langue (`en`, `fr`, etc...).
 
 Vous pouvez trouver plus d'informations sur les traductions dans la
 [documentation de Laravel](https://laravel.com/docs/6.x/localization).
