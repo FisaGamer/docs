@@ -34,6 +34,7 @@ The `plugin.json` file is required to load a plugin, and
 contains the different information of a plugin:
 ```json
 {
+    "id": "example",
     "name": "Example",
     "version": "1.0.0",
     "description": "A great plugin.",

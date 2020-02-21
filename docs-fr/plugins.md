@@ -16,7 +16,7 @@ Avant de créer un plugin, il est recommandé de lire la
 
 ```
 plugins/  <-- Dossier contenant les différents plugins installés
-|  example/  <-- Slug de votre plugin (nom de votre plugin en minuscule)
+|  example/  <-- Id de votre plugin
 |  |  plugin.json  <-- Le fichier principal de votre thème contenant les différentes informations
 |  |  assets/  <-- Le dossier contenant les assets de votre plugin (css, js, images, svg, etc)
 |  |  database/
@@ -34,6 +34,7 @@ Le fichier `plugin.json` est indispensable pour charger un plugin, et
 contient les différentes informations d'un plugin:
 ```json
 {
+    "id": "exemple",
     "name": "Exemple",
     "version": "1.0.0",
     "description": "Un super plugin",
@@ -54,6 +55,14 @@ défaut:
 ```
 php artisan plugin:create <nom du plugin>
 ```
+
+#### ID du plugin
+
+Chaque plugin doit posséder un id, qui doit être unique et qui doit contenir seulement
+des chiffres, des lettres miniscules et des tirets. Il est recommandé de se baser pour
+le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra être
+`hello-world`.
+Également le dossier du plugin doit avoir le même nom que son id.
 
 ### Routes
 
@@ -90,7 +99,7 @@ de lire [sa documentation](https://laravel.com/docs/6.x/blade), d'autant plus qu
 traditionnelle lorsque vous travaillez avec Blade, en effet celle-ci n'apporte
 aucun avantage et seulement des inconvénients.
 
-Pour afficher une vue vous pouvez utiliser `view('<slug du plugin>::<nom de votre vue>')`,
+Pour afficher une vue vous pouvez utiliser `view('<id du plugin>::<nom de la vue>')`,
 par exemple `view('support::tickets.index')` pour afficher la vue `tickets.index`
 du plugin support.
 
@@ -359,7 +368,7 @@ Vous pouvez trouver plus d'informations sur les traductions dans la
 [documentation de Laravel](https://laravel.com/docs/6.x/localization).
 
 Pour récupérer une traduction vous pouvez utiliser la fonction
-`trans('<nom de votre plugin>::<nom du fichier>.<message>')`, par exemple
+`trans('<id du plugin>::<nom du fichier>.<message>')`, par exemple
 `trans('support::messages.tickets.home')` pour afficher le message `tickets.home`,
 dans le fichier `messages.php` du plugin support:
 ```php

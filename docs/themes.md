@@ -29,6 +29,7 @@ All themes need to have a `theme.json` file at their root, that is
 the only essential element for a theme and it looks like this:
 ```json
 {
+    "id": "example",
     "name": "Example",
     "version": "1.0.0",
     "description": "A great theme.",

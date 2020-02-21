@@ -13,7 +13,7 @@ la racine de votre site.
 
 ```
 themes/  <-- Dossier contenant tous les thèmes installés
-|  example/  <-- Slug de votre thème (nom de votre thème en minuscule)
+|  example/  <-- Id de votre thème
 |  |  theme.json  <-- Le fichier principal de votre thème contenant les différentes informations
 |  |  assets/  <-- Le dossier contenant les assets de votre thème (css, js, images, svg, etc)
 |  |  views/  <-- Le dossier contenant les vues de votre thème
@@ -29,6 +29,7 @@ Tous les thèmes ont besoin d'avoir un fichier `theme.json` à leur racine, c'es
 le seul élément indispensable pour un thème et il se présente sous cette forme:
 ```json
 {
+    "id": "exemple",
     "name": "Exemple",
     "version": "1.0.0",
     "description": "Un super thème",
@@ -44,6 +45,14 @@ générer automatiquement le dossier du thème ainsi que le fichier `theme.json`
 ```
 php artisan theme:create <nom du thème>
 ```
+
+#### ID du thème
+
+Chaque thème doit posséder un id, qui doit être unique et qui doit contenir seulement
+des chiffres, des lettres miniscules et des tirets. Il est recommandé de se baser pour
+le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra être
+`hello-world`.
+Également le dossier du thème doit avoir le même nom que son id.
 
 ### Les vues
 
@@ -65,10 +74,17 @@ Mais vous pouvez bien évidemment utiliser le framework CSS de votre choix.
 
 Côté Javascript, jQuery n'est pas obligatoire, seul [Axios](https://github.com/axios/axios) est nécessaire comme dépendance!
 
+> {info} Si jamais une vue n'est pas présente dans le thème mais est présente de
+base dans le CMS ou dans un plugin, celle ci sera automatiquement utilisée.
+
 #### Le layout
 
 Le layout est la structure de l'ensemble des pages d'un thème. Il contient
 en effet les metas, assets du thème, header, footer etc.
+
+Pour définir le layout de la page, il faut que la vue étende la vue contenant
+le layout, vous pouvez soit utiliser le layout par défaut avec
+`@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
 
 Pour afficher le contenu de la page actuelle, vous pouvez utiliser
 `@yield('content')`, et pour afficher le titre de la page actuelle vous pouvez

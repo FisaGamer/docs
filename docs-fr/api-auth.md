@@ -73,4 +73,4 @@ Une fois ceci fait, AzAuth est intégré à votre launcher.
 
 AzAuth a été conçu avec comme seule dépendance [Gson](https://github.com/google/gson), vous pouvez donc parfaitement l'utiliser si vous n'utilisez pas
 OpenLauncherLib, vous pouvez simplement utiliser `AzAuthenticator#authenticate(String username, String password)` et cela va
-vous donner directement un `AuthResult` contenant le pseudo, l'uuid, le grade, l'access token et pleins d'autres données utiles.
+vous donner directement un `User` contenant le pseudo, l'uuid, le grade, l'access token et pleins d'autres données utiles.

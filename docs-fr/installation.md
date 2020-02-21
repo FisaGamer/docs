@@ -102,6 +102,23 @@ Vous devez configurer votre serveur pour que la commande `php artisan schedule:r
 Cela peut être fait en modifiant la configuration de crontab avec la commande `crontab -e`
 (n'oubliez pas de remplacer `/var/www/azuriom` par l'emplacement du site).
 
+## Environnement de développement
+
+Si jamais Azuriom est installé en local pour du développement (par exemple pour
+faire des thèmes/plugins), il est très fortement recommandé d'activer le debug
+afin de simplifier le développement.
+Cela peut se faire très simplement en modifiant ces 2 lignes dans le `.env` à la
+racine du site:
+```
+APP_ENV=local
+APP_DEBUG=true
+```
+
+Il est également recommandé de désactiver RocketBooster lors du développement.
+
+> {warn} Si jamais un est accessible publiquement, il est très fortement
+déconseillé d'activer le debug et de configurer l'environnement de développement.
+
 ## Configuration du serveur web
 
 ### Apache 2
