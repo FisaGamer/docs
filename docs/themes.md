@@ -9,7 +9,7 @@ the root of your website.
 
 ## Creating a theme
 
-### Structuring a theme
+### Structuration
 
 ```
 themes/ <-- Folder containing all installed themes
@@ -46,7 +46,7 @@ automatically generate the theme directory and the `theme.json` file:
 php artisan theme:create <theme name>
 ```
 
-### The views
+### Views
 
 The views are the heart of a theme, they are the HTML content files of
 a theme for the different parts of the website.
@@ -79,7 +79,7 @@ You can also integrate different elements with
 `@include('<name of the view>')`, for example `@include('element.navbar')` for
 include the navbar.
 
-### The methods
+### Methods
 
 #### Assets
 
@@ -89,22 +89,7 @@ To have the link to an asset in a theme you can use the function
 <link rel="stylesheet" href="{{ theme_asset('css/style.css') }}">
 ```
 
-#### The translations
-
-A theme can, if it needs it, load translations.
-
-To do so, just create a `messages.php` file in the `lang/<language>` directory (ex: `lang/en`).
-of a theme, you can then display a translation via the
-trans: `{{ trans('theme::messages.hello') }}` or via the `@lang` directive: 
-`@lang('theme::messages.hello')`.
-You can also use `trans_choice` for a translation with
-numbers, and `trans_bool` to translate a boolean (will return in English `Yes`).
-/`No`.
-
-For more details on translations, you can refer to the
-[Laravel documentation](https://laravel.com/docs/6.x/localization).
-
-#### The user
+#### Current user
 
 The current user can be retrieved using the `auth()->user()` function.
 For more details on authentication, you can refer to the
@@ -124,7 +109,23 @@ dedicated:
 | `money_name()`   | Returns the name of the website's currency   |
 | `format_money()` | Returns an amount formatted with the website currency |
 
-### Theme setup
+#### The translations
+
+A theme can, if it needs it, load translations.
+
+To do so, just create a `messages.php` file in the `lang/<language>` directory (ex: `lang/en`).
+of a theme, you can then display a translation via the
+trans: `{{ trans('theme::messages.hello') }}` or via the `@lang` directive: 
+`@lang('theme::messages.hello')`.
+You can also use `trans_choice` for a translation with
+numbers, and `trans_bool` to translate a boolean (will return in English `Yes`).
+/`No`.
+
+For more details on translations, you can refer to the
+[Laravel documentation](https://laravel.com/docs/6.x/localization).
+
+
+### Configuration
 
 You can add a configuration in a theme, to do so you just have to
 to create at the root of a theme:

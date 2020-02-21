@@ -9,7 +9,7 @@ la racine de votre site.
 
 ## Création d'un thème
 
-### Structuration d'un thème
+### Structuration
 
 ```
 themes/  <-- Dossier contenant tous les thèmes installés
@@ -54,7 +54,7 @@ le nom pour créer l'id, par exemple si le nom est `Hello World`, l'id pourra ê
 `hello-world`.
 Également le dossier du thème doit avoir le même nom que son id.
 
-### Les vues
+### Vues
 
 Les vues sont le coeur de d'un thème, ce sont les fichiers content l'HTML de
 d'un thème pour afficher les différentes parties du site.
@@ -77,7 +77,7 @@ Côté Javascript, jQuery n'est pas obligatoire, seul [Axios](https://github.com
 > {info} Si jamais une vue n'est pas présente dans le thème mais est présente de
 base dans le CMS ou dans un plugin, celle ci sera automatiquement utilisée.
 
-#### Le layout
+#### Layout
 
 Le layout est la structure de l'ensemble des pages d'un thème. Il contient
 en effet les metas, assets du thème, header, footer etc.
@@ -94,7 +94,7 @@ utiliser `@yield('title')`.
 `@include('<nom de la vue>')`, par exemple `@include('element.navbar')` pour
 inclure la navbar.
 
-### Les méthodes
+### Méthodes
 
 #### Assets
 
@@ -104,22 +104,7 @@ Pour avoir le lien vers un asset de du thème vous pouvez utiliser la fonction
 <link rel="stylesheet" href="{{ theme_asset('css/style.css') }}">
 ```
 
-#### Les traductions
-
-Un thème peut, si il en a besoin, charger des traductions.
-
-Pour cela il suffit de créer un fichier `messages.php` dans le dossier `lang/<lang>` (ex: `lang/fr`)
-du thème, vous pouvez ensuite affichez une traduction via la fonction
-trans: `{{ trans('theme::messages.hello') }}` ou via la directive `@lang`: 
-`@lang('theme::messages.hello')`.
-Vous pouvez également utiliser `trans_choice` pour une traduction comportant des
-nombres, et `trans_bool` pour traduire un boolean (retournera en français `Oui`
-/ `Non`).
-
-Pour plus de détails sur les traductions, vous pouvez vous référer à la
-[documentation de Laravel](https://laravel.com/docs/6.x/localization).
-
-#### L'utilisateur
+#### Utilisateur actuel
 
 L'utilisateur actuel peut être récupéré grâce à la fonction `auth()->user()`.
 Pour plus de détails sur l'authentification, vous pouvez vous référer à la
@@ -139,7 +124,22 @@ dédiées:
 | `money_name()`   | Retourne le nom de la monnaie du site  |
 | `format_money()` | Retourne un montant formaté avec la monnaie du site |
 
-### Configuration du thème
+### Traductions
+
+Un thème peut, si il en a besoin, charger des traductions.
+
+Pour cela il suffit de créer un fichier `messages.php` dans le dossier `lang/<lang>` (ex: `lang/fr`)
+du thème, vous pouvez ensuite affichez une traduction via la fonction
+trans: `{{ trans('theme::messages.hello') }}` ou via la directive `@lang`: 
+`@lang('theme::messages.hello')`.
+Vous pouvez également utiliser `trans_choice` pour une traduction comportant des
+nombres, et `trans_bool` pour traduire un boolean (retournera en français `Oui`
+/ `Non`).
+
+Pour plus de détails sur les traductions, vous pouvez vous référer à la
+[documentation de Laravel](https://laravel.com/docs/6.x/localization).
+
+### Configuration
 
 Vous pouvez ajouter une configuration dans un thème, pour cela il vous suffit
 de créer à la racine du thème:
