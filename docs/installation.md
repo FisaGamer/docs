@@ -34,7 +34,19 @@ Azuriom can be installed in two different ways:
 
 2. Extract the archive at the root of your website.
 
-3. Go to `your-website.com/install.php` and follow the steps of installation.
+3. Set write/read permissions to the `storage/`, `bootstrap/cache/`, `resources/themes` and `plugins` folders:
+```
+chmod -R 770 storage bootstrap/cache resources/themes plugins
+```
+  * If the current user is not the web server user, it may be
+  necessary to change the owner of the files:
+```
+chown -R www-data:www-data /var/www/azuriom
+```
+  (replace `var/www/azuriom` with the site location and `www-data`
+  with the web server user)
+
+4. Go to `your-website.com/install.php` and follow the steps of installation.
 
 ### Manual Installation
 
@@ -46,6 +58,13 @@ Azuriom can be installed in two different ways:
 ```
 chmod -R 770 storage bootstrap/cache resources/themes plugins
 ```
+  * If the current user is not the web server user, it may be
+  necessary to change the owner of the files:
+```
+chown -R www-data:www-data /var/www/azuriom
+```
+  (replace `var/www/azuriom` with the site location and `www-data`
+  with the web server user)
 
 4. Generate the secret key:
 ```
@@ -78,9 +97,10 @@ php artisan user:create --admin
 
 You need to configure your web server to run the `php artisan schedule:run` command every minute, for example by adding a Cron entry:
  ```
-* * * * * cd /path-to-azuriom && php artisan schedule:run >> /dev/null 2>&1
+* * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
  ```
-This can be done by modifying the crontab configuration with the `crontab -e` command.
+This can be done by modifying the crontab configuration with the `crontab -e` command
+(just replace `var/www/azuriom` by the site location).
 
 ## Web server configuration
 
@@ -88,10 +108,15 @@ This can be done by modifying the crontab configuration with the `crontab -e` co
 
 If you are using Apache 2, it may be necessary to enable url rewriting.
 
-To do this you need to modify the `/etc/apache2/sites-available/000-default.conf` file
+To do this, first enable the "rewrite" mod:
+```
+a2enmod rewrite
+```
+ 
+Then you need to modify the `/etc/apache2/sites-available/000-default.conf` file
 and add the following lines between the `<VirtualHost>` tags (replacing
-`var/www/azuriom` by site location):
-```xml
+`var/www/azuriom` by site location) to allow URL rewrite:
+```
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
     AllowOverride All
@@ -99,7 +124,7 @@ and add the following lines between the `<VirtualHost>` tags (replacing
 </Directory>
 ```
 
-Then you will have to restart Apache 2:
+Finally, you just need to restart Apache 2:
 ```
 service apache2 restart
 ```

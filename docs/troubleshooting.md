@@ -11,7 +11,7 @@ The url rewriting is not activated, you just have to activate it (see next quest
 
 ### URL rewriting is not enabled in Apache 2
 You need to modify the `/etc/apache2/sites-available/000-default.conf` file and add these lines between the `<VirtualHost>` tags:
-```xml
+```
 <Directory "/var/www/html">
   AllowOverride All
 </Directory>

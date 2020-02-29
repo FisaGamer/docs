@@ -16,7 +16,7 @@ Before creating a plugin, it is recommended that you read the
 
 ```
 plugins/  <-- Folder containing the different installed plugins
-|  example/  <-- Slug of your plugin (name of your pluin in lower case)
+|  example/  <-- Id of your plugin
 |  |  plugin.json  <-- The main file of your theme containing the various information
 |  |  assets/  <-- The folder containing the assets of your plugin (css, js, images, svg, etc)
 |  |  database/
@@ -48,6 +48,13 @@ contains the different information of a plugin:
     ]
 }
 ```
+
+#### Plugin ID
+
+Each plugin must have an id, which must be unique and contain only numbers,
+lowercase letters and dashes. It is recommended to use the name as a basis for
+creating the id, for example if the name is `Hello World`, the id could be
+`hello-world`. Also the plugin's directory must have the same name as its id. 
 
 > {info} To create a plugin you can use the following command that will
 automatically generate the plugin's folder and many files by
@@ -90,7 +97,7 @@ to read [its documentation](https://laravel.com/docs/6.x/blade), especially sinc
 when you work with Blade, because Blade does not bring you the traditional
 no advantages and only disadvantages.
 
-To display a view you can use `view('<plugin slug>::<name of your view>')`,
+To display a view you can use `view('<plugin id>::<name of the view>')`,
 of example `view('support::tickets.index')` to display the `tickets.index` view
 of the support plugin.
 
@@ -350,13 +357,13 @@ class CreateSupportTicketsTable extends Migration
 
 Translations allow you to translate a plugin (amazing), they are found at
 in the `resources/lang` directory at the root of a plugin, in the 
-language folder (`en`, `fr`, etc)
+language folder (`en`, `fr`, etc...).
 
 You can find more informations on translations in the
 [Laravel documentation](https://laravel.com/docs/6.x/localization).
 
 To retrieve a translation you can use the
-`trans('<name of your plugin>::<filename>.<message>')`, for example
+`trans('<plugin id>::<filename>.<message>')`, for example
 `trans('support::messages.tickets.home')` to display the `tickets.home` message,
 in the `messages.php` file of the support plugin:
 ```php

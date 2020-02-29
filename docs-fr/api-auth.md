@@ -11,14 +11,12 @@ Vous pouvez télécharger les sources et les releases d'AzAuth sur
 Si vous utilisez un gestionnaire de dépendances, vous pouvez ajouter AzAuth comme
 dépendance de la facon suivante:
 
-> {warn} Le repo Maven n'est pas encore disponible mais il le sera très prochainement !
-
 ### Gradle
 
 Dans le `build.gradle`:
 ```groovy
 repositories {
-    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 ```
 ```groovy
@@ -30,6 +28,14 @@ dependencies {
 ### Maven
 
 Dans le `pom.xml`:
+```xml
+<repositories>
+    <repository>
+        <id>sonatype-repo</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
+</repositories>
+```
 ```xml
 <dependencies>
     <dependency>

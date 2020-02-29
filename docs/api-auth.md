@@ -10,15 +10,13 @@ You can download AzAuth's source and releases at
 If you are using a dependency manager, you can add AzAuth as a
 dependency in the following way:
 
-> {warn} The Maven repo is not yet available but it will be very soon!
-
 ### Gradle
 
 in `build.gradle`:
 
 ```groovy
 repositories {
-    maven { url 'https://repo.azuriom.com/' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 ```
 ```groovy
@@ -33,8 +31,8 @@ in `pom.xml`:
 ```xml
 <repositories>
     <repository>
-        <id>azuriom-repo</id>
-        <url>https://repo.azuriom.com</url>
+        <id>sonatype-repo</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
 </repositories>
 ```
@@ -62,18 +60,18 @@ although it does not cause any real problems, it is no longer used if you use Az
 
 You should have in the code of your launcher an `auth` method similar to the code below:
 ```java
-	public void auth(String username, String password) throws AuthenticationException {
-		Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
-		AuthResponse response = authenticator.authenticate(AuthAgent.MINECRAFT, username, password, "");
-		authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
-	}
+public void auth(String username, String password) throws AuthenticationException {
+    Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
+    AuthResponse response = authenticator.authenticate(AuthAgent.MINECRAFT, username, password, "");
+    authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
+}
 ```
-You just have to replace it by the code below, to modify `<url>` by the url at the root of your site under azuriom.
+You just have to replace it by the code below, to modify `<url>` by the url of the root of your site under azuriom.
 ```java
-	public void auth(String username, String password) throws AuthException, IOException {
-		AzAuthenticator authenticator = new AzAuthenticator("<url>");
-		authInfos = authenticator.authenticate(username, password, AuthInfos.class);
-	}
+public void auth(String username, String password) throws AuthException, IOException {
+    AzAuthenticator authenticator = new AzAuthenticator("<url>");
+    authInfos = authenticator.authenticate(username, password, AuthInfos.class);
+}
 ```
 Once this is done, AzAuth is integrated into your launcher.
 

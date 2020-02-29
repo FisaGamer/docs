@@ -17,7 +17,7 @@ but with more advanced functionalities _(example: an advanced statistics system)
 
 ## Link By Ping
 
-To be able to link your server with your site under Azuriom by ping, 
+To be able to link your server with a site under Azuriom by ping, 
 you just have to add a new server with "Ping" as the link type.
 and fill in the requested information _(the default port of Minecraft is `25565`)_.
 
@@ -44,14 +44,15 @@ and fill in the requested information. _(Default Rcon port is 25575)_.
 AzLink is a site-to-server link plugin specially designed for and by Azuriom. 
 to allow you to link your server to your site simply, quickly and securely.
 
-AzLink currently supports Bukkit, BungeeCord, Sponge and Velocity in the same plugin. A legacy version is available
-for Bukkit 1.7.10.
+AzLink currently supports Bukkit, BungeeCord, Sponge and Velocity in the same plugin.
+A legacy version is available for Bukkit 1.7.10.
 
 ### Installation
 
 1. Download AzLink from [our site](https://azuriom.com/azlink)
 
-2. Install it on your server in the `plugin/` folder and restart your server.
+2. Install it on the server in the `plugins/` folder (or `mods/` with Sponge)
+and restart the server.
 
 3. Go to your site and add a new server with the link type "AzLink", 
 follow the link steps and fill in the requested information.

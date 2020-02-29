@@ -13,7 +13,7 @@ the root of your website.
 
 ```
 themes/ <-- Folder containing all installed themes
-| example/ <-- Slug of your theme (name of your theme in lower case)
+| example/ <-- ID of your theme
 | | theme.json <-- The main file of your theme containing the various informations
 | |  assets/  <-- The folder containing the assets of your theme (css, js, images, svg, etc)
 | | views/ <-- The folder containing the views of your theme.
@@ -46,6 +46,13 @@ automatically generate the theme directory and the `theme.json` file:
 php artisan theme:create <theme name>
 ```
 
+#### Theme ID
+
+Each theme must have an id, which must be unique and contain only numbers,
+lowercase letters and dashes. It is recommended to use the name as a basis for
+creating the id, for example if the name is `Hello World`, the id could be
+`hello-world`. Also the theme's directory must have the same name as its id. 
+
 ### Views
 
 The views are the heart of a theme, they are the HTML content files of
@@ -66,7 +73,10 @@ But you can of course use the CSS framework of your choice.
 
 On the Javascript side, jQuery is not mandatory, only [Axios](https://github.com/axios/axios) is necessary as a dependency!
 
-#### The layout
+> {info} If a view is not present in the theme but is in the CMS or in a plugin,
+ it will be automatically used.
+
+#### Layout
 
 The layout is the structure of all the pages of a theme. It contains
 indeed the metas, assets of a theme, header, footer etc..
@@ -78,6 +88,10 @@ use `@yield('title')`.
 You can also integrate different elements with
 `@include('<name of the view>')`, for example `@include('element.navbar')` for
 include the navbar.
+
+To define the layout of the page, the view must extend the view containing
+the layout, you can either use the default layout with
+`@extends('layouts.app')`, or create your own layout and extend it.
 
 ### Methods
 
@@ -95,7 +109,7 @@ The current user can be retrieved using the `auth()->user()` function.
 For more details on authentication, you can refer to the
 [Laravel documentation](https://laravel.com/docs/6.x/authentication).
 
-#### Useful functions
+#### Functions
 
 You can retrieve a certain number of parameters from the website via the functions
 dedicated:
@@ -109,7 +123,7 @@ dedicated:
 | `money_name()`   | Returns the name of the website's currency   |
 | `format_money()` | Returns an amount formatted with the website currency |
 
-#### The translations
+#### Translations
 
 A theme can, if it needs it, load translations.
 
