@@ -60,7 +60,7 @@ although it does not cause any real problems, it is no longer used if you use Az
 
 You should have in the code of your launcher an `auth` method similar to the code below:
 ```java
-public void auth(String username, String password) throws AuthenticationException {
+public static void auth(String username, String password) throws AuthenticationException {
     Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
     AuthResponse response = authenticator.authenticate(AuthAgent.MINECRAFT, username, password, "");
     authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
@@ -68,12 +68,14 @@ public void auth(String username, String password) throws AuthenticationExceptio
 ```
 You just have to replace it by the code below, to modify `<url>` by the url of the root of your site under azuriom.
 ```java
-public void auth(String username, String password) throws AuthException, IOException {
+public static void auth(String username, String password) throws AuthException, IOException {
     AzAuthenticator authenticator = new AzAuthenticator("<url>");
     authInfos = authenticator.authenticate(username, password, AuthInfos.class);
 }
 ```
-Once this is done, AzAuth is integrated into your launcher.
+Once this is done, you just need to import the class `AzAuthenticator` &
+`AuthException` from the `com.azuriom.auth` package and AzAuth will be integrated
+into your launcher.
 
 ### Using without OpenLauncherLib
 
