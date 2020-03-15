@@ -4,8 +4,10 @@ AzAuth is an api allowing you to authenticate users of a website under Azuriom o
 
 ## Download
 
-You can download AzAuth's source and releases at
-[GitHub](https://github.com/Azuriom/AzAuth/releases).
+AzAuth sources are available on [GitHub](https://github.com/Azuriom/AzAuth)
+and the jar file can be downloaded from 
+[Sonatype OSS](https://oss.sonatype.org/service/local/repositories/snapshots/content/com/azuriom/azauth/1.0-SNAPSHOT/azauth-1.0-20200221.223801-1.jar).
+
 
 If you are using a dependency manager, you can add AzAuth as a
 dependency in the following way:
