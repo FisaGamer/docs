@@ -46,7 +46,7 @@ chown -R www-data:www-data /var/www/azuriom
  (en remplaçant `var/www/azuriom` par l'emplacement du site et `www-data` par
  l'utilisateur du serveur web)
 
-4. Se rendre sur `votre-site.fr/install.php` et suivre les étapes de l'installation.
+4. Se rendre sur `votre-site.fr/` et suivre les étapes de l'installation.
 
 ### Installation Manuelle
 
