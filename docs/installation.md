@@ -66,12 +66,7 @@ chown -R www-data:www-data /var/www/azuriom
   (replace `var/www/azuriom` with the site location and `www-data`
   with the web server user)
 
-4. Generate the secret key:
-```
-php artisan key:generate
-```
-
-5. Install the dependencies with Composer:
+4. Install the dependencies with [Composer](https://getcomposer.org/):
 ```
 composer install
 ```
@@ -81,19 +76,29 @@ composer install
 composer install --optimize-autoloader --no-dev
 ```
 
+5. Generate the secret key:
+```
+php artisan key:generate
+```
+
 6. Setup the database:
 ```
 php artisan migrate --seed
 ```
 
-7. Create an admin account _(Optional but recommended)_:
+7. Create the storage symlink
+```
+php artisan storage:link
+```
+
+8. Create an admin account _(Optional but recommended)_:
 ```
 php artisan user:create --admin
 ```
 
-8. Configure your web server to point to the `public/` folder _(Optional but highly recommended)_
+9. Configure your web server to point to the `public/` folder _(Optional but highly recommended)_
 
-9. Setup the scheduler _(Optional but recommended)_:
+10. Setup the scheduler _(Optional but recommended)_:
 
 You need to configure your web server to run the `php artisan schedule:run` command every minute, for example by adding a Cron entry:
  ```
