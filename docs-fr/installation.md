@@ -32,80 +32,82 @@ Azuriom peut être installé de deux façons différentes:
 
 1. Télécharger la dernière version d'Azuriom sur [notre site](https://azuriom.com/download).
 
-2. Extraire l'archive à la racine de votre site web.
+1. Extraire l'archive à la racine de votre site web.
 
-3. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
-```
-chmod -R 770 storage bootstrap/cache resources/themes plugins
-```
-  * Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
-  il peut être nécessaire de changer le propriétaire des fichiers:
-```
-chown -R www-data:www-data /var/www/azuriom
-```
- (en remplaçant `var/www/azuriom` par l'emplacement du site et `www-data` par
- l'utilisateur du serveur web)
+1. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
+    ```
+    chmod -R 770 storage bootstrap/cache resources/themes plugins
+    ```
+    
+    Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
+    il peut être nécessaire de changer le propriétaire des fichiers:
+    ```
+    chown -R www-data:www-data /var/www/azuriom
+    ```
+    (en remplaçant `var/www/azuriom` par l'emplacement du site et `www-data` par
+    l'utilisateur du serveur web)
 
-4. Se rendre sur `votre-site.fr/` et suivre les étapes de l'installation.
+1. Se rendre sur `votre-site.fr/` et suivre les étapes de l'installation.
 
 ### Installation Manuelle
 
 1. Cloner le repos GitHub (https://github.com/Azuriom/Azuriom.git) ou [télécharger une release](https://github.com/Azuriom/Azuriom/releases).
 
-2. Copier le fichier `.env.example` vers `.env` et indiquer les informations de connexion à la base de données.
+1. Copier le fichier `.env.example` vers `.env` et indiquer les informations de connexion à la base de données.
 
-3. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
-```
-chmod -R 770 storage bootstrap/cache resources/themes plugins
-```
-  * Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
-  il peut être nécessaire de changer le propriétaire des fichiers:
-```
-chown -R www-data:www-data /var/www/azuriom
-```
- (en remplaçant `var/www/azuriom` par l'emplacement du site et `www-data` par
- l'utilisateur du serveur web)
+1. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
+    ```
+    chmod -R 770 storage bootstrap/cache resources/themes plugins
+    ```
+    
+    Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
+    il peut être nécessaire de changer le propriétaire des fichiers:
+    ```
+    chown -R www-data:www-data /var/www/azuriom
+    ```
+    (en remplaçant `var/www/azuriom` par l'emplacement du site et `www-data` par
+    l'utilisateur du serveur web)
 
-4. Installer les dépendances avec [Composer](https://getcomposer.org/):
-```
-composer install
-```
+1. Installer les dépendances avec [Composer](https://getcomposer.org/):
+    ```
+    composer install
+    ```
 
-  * Si vous utilisez Azuriom en production, vous pouvez optimiser l'autoloader de Composer en utilisant cette commande: 
- ```
-composer install --optimize-autoloader --no-dev
- ```
+    * Si vous utilisez Azuriom en production, vous pouvez optimiser l'autoloader de Composer en utilisant cette commande: 
+        ```
+        composer install --optimize-autoloader --no-dev
+        ```
 
-5. Générer la clé secrète:
-```
-php artisan key:generate
-```
+1. Générer la clé secrète:
+    ```
+    php artisan key:generate
+    ```
 
-6. Mettre en place la base de données:
- ```
-php artisan migrate --seed
- ```
+1. Mettre en place la base de données:
+    ```
+    php artisan migrate --seed
+    ```
 
-7. Créer le symlink pour le stockage
-```
-php artisan storage:link
-```
+1. Créer le symlink pour le stockage
+    ```
+    php artisan storage:link
+    ```
 
-8. Créer un compte administrateur _(Optionnel, mais très utile)_:
-```
-php artisan user:create --admin
-```
+1. Créer un compte administrateur _(Optionnel, mais très utile)_:
+    ```
+    php artisan user:create --admin
+    ```
 
-9. Configurer votre serveur web pour qu'il pointe vers le dossier `public/` _(Optionnel, mais très fortement recommandé)_
+1. Configurer votre serveur web pour qu'il pointe vers le dossier `public/` _(Optionnel, mais très fortement recommandé)_
 
-10. Mettre en place le scheduler _(Optionnel, mais recommandé)_:
+1. Mettre en place le scheduler _(Optionnel, mais recommandé)_:
 
-Vous devez configurer votre serveur pour que la commande `php artisan schedule:run` soit exécutée toutes les minutes, par exemple en ajoutant une entrée Cron:
- ```
-* * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
- ```
-Cela peut être fait en modifiant la configuration de crontab avec la commande `crontab -e`
-(n'oubliez pas de remplacer `/var/www/azuriom` par l'emplacement du site).
+    Vous devez configurer votre serveur pour que la commande `php artisan schedule:run` soit exécutée toutes les minutes, par exemple en ajoutant une entrée Cron:
+    ```
+    * * * * * cd /var/www/azuriom && php artisan schedule:run >> /dev/null 2>&1
+     ```
+    Cela peut être fait en modifiant la configuration de crontab avec la commande `crontab -e`
+    (n'oubliez pas de remplacer `/var/www/azuriom` par l'emplacement du site).
 
 ## Environnement de développement
 

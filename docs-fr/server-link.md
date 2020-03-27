@@ -28,13 +28,13 @@ Pour pouvoir lier un serveur avec un site sous Azuriom par Rcon, il faut:
 
 1. Vous rendre dans le fichier `server.properties` de votre serveur
 
-2. Configurer ce fichier de la façon suivante:
+1. Configurer ce fichier de la façon suivante:
     * Mettre `enable-rcon` en `true`
     * Mettre `rcon.password` avec `votre-mot-de-passe`
     * Mettre `rcon.port` avec `votre-port` _(par défaut `25575`)_
     * Sauvegarder et redémarrer votre serveur
    
-3. Vous rendre sur votre site et ajouter un nouveau serveur avec comme type de liaison "Rcon"
+1. Vous rendre sur votre site et ajouter un nouveau serveur avec comme type de liaison "Rcon"
 et remplir les informations demandées _(le port Rcon par defaut est `25575`)_.
 
 ## Liaison par plugin (AzLink)
@@ -52,8 +52,8 @@ Une version legacy est disponible pour les serveurs utilisant Bukkit 1.7.10.
 
 1. Télécharcher AzLink sur [notre site](https://azuriom.com/azlink)
 
-2. Installer AzLink sur le serveur en le mettant dans le dossier `plugins/`
+1. Installer AzLink sur le serveur en le mettant dans le dossier `plugins/`
 (ou `mods/` pour Sponge) et redémarrer le serveur.
 
-3. Aller sur le site et ajouter un nouveau serveur avec comme type de liaison "AzLink", 
+1. Aller sur le site et ajouter un nouveau serveur avec comme type de liaison "AzLink", 
 suivre les étapes de liaison et remplir les informations demandées.

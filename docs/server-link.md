@@ -28,13 +28,13 @@ You must:
 
 1. Go to the `server.properties` file of your server
 
-2. Configure this file as follows:
+1. Configure this file as follows:
     * Set `enable-rcon` to `true`.
     * Put `rcon.password` with `your-password`.
     * Set `rcon.port` with `your-port` _(default 25575)_
     * Backup and restart your server
    
-3. Go to your site and add a new server with the link type "Rcon".
+1. Go to your site and add a new server with the link type "Rcon".
 and fill in the requested information. _(Default Rcon port is 25575)_.
 
 ## Plugin link
@@ -51,8 +51,8 @@ A legacy version is available for Bukkit 1.7.10.
 
 1. Download AzLink from [our site](https://azuriom.com/azlink)
 
-2. Install it on the server in the `plugins/` folder (or `mods/` with Sponge)
+1. Install it on the server in the `plugins/` folder (or `mods/` with Sponge)
 and restart the server.
 
-3. Go to your site and add a new server with the link type "AzLink", 
+1. Go to your site and add a new server with the link type "AzLink", 
 follow the link steps and fill in the requested information.
