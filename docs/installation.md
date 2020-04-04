@@ -51,7 +51,10 @@ Azuriom can be installed in two different ways:
 
 ### Manual Installation
 
-1. Clone the GitHub repository (https://github.com/Azuriom/Azuriom.git) or [download a release](https://github.com/Azuriom/Azuriom/releases).
+1. Clone the [GitHub repository](https://github.com/Azuriom/Azuriom) or [download a release](https://github.com/Azuriom/Azuriom/releases).
+    ```
+    git clone https://github.com/Azuriom/Azuriom.git
+    ```
 
 1. Copy the `.env.example` file to `.env` and specify the database connection information.
 
@@ -168,7 +171,12 @@ server {
         fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
         include fastcgi_params;
     }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
 ```
 
-Just remember to replace `example.com` with your domain and `/var/www/azuriom`.
-by the location of the site.
+Just remember to replace `example.com` with your domain, `/var/www/azuriom`
+with the location of the site and `php7.2` with your PHP version.

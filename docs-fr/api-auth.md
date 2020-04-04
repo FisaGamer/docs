@@ -69,13 +69,13 @@ public static void auth(String username, String password) throws AuthenticationE
 ```
 Il vous suffit de la remplacer par le code ci dessous, en remplaçant `<url>` par l'url de la racine de votre site sous Azuriom.
 ```java
-public static void auth(String username, String password) throws AuthException, IOException {
+public static void auth(String username, String password) throws AuthenticationException, IOException {
     AzAuthenticator authenticator = new AzAuthenticator("<url>");
     authInfos = authenticator.authenticate(username, password, AuthInfos.class);
 }
 ```
 Une fois ceci fait, il suffit d'importer les classes `AzAuthenticator` et
-`AuthException` qui sont dans le package `com.azuriom.auth` et AzAuth sera
+`AuthenticationException` qui sont dans le package `com.azuriom.auth` et AzAuth sera
 intégré à votre launcher.
 
 ### Utilisation sans OpenLauncherLib

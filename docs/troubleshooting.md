@@ -28,6 +28,19 @@ If the account is created correctly despite the error, this problem can occur if
 the sending of e-mails is not correctly configured, for this check
 the configuration of the sending of emails on the admin panel of your site.
 
+### When Azuriom is installed locally, updates and themes/plugins are not available
+
+If when you go in the "Updates" tab and do "Check for updates", you get this error:
+`curl: (60) SSL certificate: unable to get local issuer certificate`, just  follow
+the following steps:
+1) Download the latest `cacert.pem` on https://curl.haxx.se/ca/cacert.pem
+1) Add this line in the php.ini (replace `/path/to/cacert.pem` by
+the location of the `cacert.pem` file):
+    ```
+    curl.cainfo="/path/to/cacert.pem""
+    ```
+1) Restart PHP
+
 ### The file has not been uploaded when uploading an image
 
 This problem occurs when you upload an image with a weight greater than the
