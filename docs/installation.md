@@ -20,7 +20,7 @@ of disk space and the following requirements:
  - GD2 PHP Extension
  - Zip PHP Extension
 
-And it's also highly recommended to have a **MySQL/MariaDB or PostgreSQL database**.
+It's also highly recommended to have a **MySQL/MariaDB or PostgreSQL database**.
 
 ## Installation
 Azuriom can be installed in two different ways:
@@ -36,7 +36,7 @@ Azuriom can be installed in two different ways:
 
 1. Set write/read permissions to the `storage/`, `bootstrap/cache/`, `resources/themes` and `plugins` folders:
     ```
-    chmod -R 770 storage bootstrap/cache resources/themes plugins
+    chmod -R 755 storage bootstrap/cache resources/themes plugins
     ```
     
     If the current user is not the web server user, it may be
@@ -60,7 +60,7 @@ Azuriom can be installed in two different ways:
 
 1. Set write/read permissions to the `storage/`, `bootstrap/cache/`, `resources/themes` and `plugins` folders:
     ```
-    chmod -R 770 storage bootstrap/cache resources/themes plugins
+    chmod -R 755 storage bootstrap/cache resources/themes plugins
     ```
     
     If the current user is not the web server user, it may be

@@ -36,7 +36,7 @@ Azuriom peut être installé de deux façons différentes:
 
 1. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
     ```
-    chmod -R 770 storage bootstrap/cache resources/themes plugins
+    chmod -R 755 storage bootstrap/cache resources/themes plugins
     ```
     
     Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
@@ -60,7 +60,7 @@ Azuriom peut être installé de deux façons différentes:
 
 1. Mettre les droits d'écriture aux dossiers `storage/`, `bootstrap/cache/`, `resources/themes` et `plugins`:
     ```
-    chmod -R 770 storage bootstrap/cache resources/themes plugins
+    chmod -R 755 storage bootstrap/cache resources/themes plugins
     ```
     
     Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,

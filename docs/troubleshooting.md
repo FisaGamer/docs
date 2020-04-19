@@ -5,7 +5,7 @@ but here are the most common mistakes with their solutions!
 
 ## Common Problems
 
-### The home page works but the other pages produce a 404 error
+### The home page works, but the other pages produce a 404 error
 
 The url rewriting is not activated, you just have to activate it (see next question).
 

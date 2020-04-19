@@ -9,7 +9,7 @@ the root of your website.
 
 ## Creating a theme
 
-### Structuration
+### Structure
 
 ```
 themes/ <-- Folder containing all installed themes
@@ -51,7 +51,7 @@ php artisan theme:create <theme name>
 Each theme must have an id, which must be unique and contain only numbers,
 lowercase letters and dashes. It is recommended to use the name as a basis for
 creating the id, for example if the name is `Hello World`, the id could be
-`hello-world`. Also the theme's directory must have the same name as its id. 
+`hello-world`. Also, the theme's directory must have the same name as its id. 
 
 ### Views
 
@@ -79,7 +79,7 @@ On the Javascript side, jQuery is not mandatory, only [Axios](https://github.com
 #### Layout
 
 The layout is the structure of all the pages of a theme. It contains
-indeed the metas, assets of a theme, header, footer etc..
+indeed the metas, assets of a theme, header, footer etc...
 
 To display the content of the current page you can use
 `@yield('content')`, and to display the title of the current page you can
@@ -141,7 +141,7 @@ For more details on translations, you can refer to the
 
 ### Configuration
 
-You can add a configuration in a theme, to do so you just have to
+You can add a configuration in a theme, to do so you just have
 to create at the root of a theme:
 * A `config/config.blade.php` view containing the form for the configuration.
 * A `config/rules.php` file containing the different validation rules for

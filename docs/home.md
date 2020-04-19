@@ -4,7 +4,7 @@
 
 [Azuriom](https://azuriom.com/) is the **next generation** game CMS,
  it's **free** and **open-source**, and is a **modern**, **reliable**, **fast and secure**
-alternative to existing CMS so you can have the **best web experience possible**.
+alternative to existing CMS, so you can have the **best web experience possible**.
 
 Azuriom also has an **advanced** extension system, so you can fully **customize** your website with the extensions on our market,
 like **moderns** and **responsive themes** or **plugins** likes **shop**, **forum** and more !

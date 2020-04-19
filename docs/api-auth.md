@@ -57,7 +57,7 @@ in the settings of your site, on your admin panel.
 ### Using with [OpenLauncherLib](https://github.com/Litarvan/OpenLauncherLib/) _(for minecraft launcher)_
 
 To begin, add AzAuth as a dependency to your project.
-Also if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it,
+Also, if you are using [OpenAuth](https://github.com/Litarvan/OpenAuth/), it is recommended that you remove it,
 although it does not cause any real problems, it is no longer used if you use AzAuth.
 
 You should have in the code of your launcher an `auth` method similar to the code below:
