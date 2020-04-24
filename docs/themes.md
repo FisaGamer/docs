@@ -14,7 +14,7 @@ the root of your website.
 ```
 themes/ <-- Folder containing all installed themes
 | example/ <-- ID of your theme
-| | theme.json <-- The main file of your theme containing the various informations
+| | theme.json <-- The main file of your theme containing the various information
 | |  assets/  <-- The folder containing the assets of your theme (css, js, images, svg, etc)
 | | views/ <-- The folder containing the views of your theme.
 | | config/
@@ -26,7 +26,7 @@ themes/ <-- Folder containing all installed themes
 ### The theme.json file
 
 All themes need to have a `theme.json` file at their root, that is
-the only essential element for a theme and it looks like this:
+the only essential element for a theme, and it looks like this:
 ```json
 {
     "id": "example",
@@ -59,8 +59,8 @@ The views are the heart of a theme, they are the HTML content files of
 a theme for the different parts of the website.
 
 Azuriom using [Laravel](https://laravel.com/), views can be made using the
-of template Blade. If you don't master Blade it is highly recommended
-to read [his documentation](https://laravel.com/docs/7.x/blade), especially since it is quite short.
+of template Blade. If you don't master Blade it is highly recommended reading
+[its documentation](https://laravel.com/docs/7.x/blade), especially since it is quite short.
 
 > {warn} It is highly recommended NOT to use PHP syntax.
 when you work with Blade, because Blade does not bring you the traditional
@@ -148,7 +148,7 @@ to create at the root of a theme:
 the configuration of a theme.
 * A `config.json` file where the theme configuration will be stored, and containing the default values. 
 
-##### Example:
+##### Example
 
 config.blade.php
 ```html

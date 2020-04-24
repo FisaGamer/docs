@@ -31,12 +31,12 @@ la configuration de l'envoi des mails sur le panel admin de votre site.
 ### Lorsque Azuriom est installé en local, les mises à jour et les thèmes/plugins ne sont disponibles
 
 Si lorsque vous allez dans l'onglet "Mises à jour" et que vous faites
-"Vérifier les mises à jour", vous avez cette erreur:
+"Vérifier les mises à jour", vous avez cette erreur :
 `curl: (60) SSL certificate : unable to get local issuer certificate`, il suffit
-de suivre les étapes suivantes:
+de suivre les étapes suivantes :
 1) Télécharger le dernier `cacert.pem` sur https://curl.haxx.se/ca/cacert.pem
 1) Ajouter cette ligne dans le php.ini (en remplaçant `/path/to/cacert.pem` par
-l'emplacement du fichier cacert.pem:
+l'emplacement du fichier `cacert.pem`:
     ```
     curl.cainfo="/path/to/cacert.pem"
     ```
@@ -48,7 +48,7 @@ Ce problème survient lorsque vous uploadez une image dont le poids dépasse le
 maximum autorisé par PHP (par défaut 2mo).
 
 Vous pouvez modifier la taille maximum autorisée lors de l'upload dans la configuration
-de PHP (dans le `php.ini`) en modifiant les valeurs suivantes:
+de PHP (dans le `php.ini`) en modifiant les valeurs suivantes :
 ```
 upload_max_filesize = 10M
 post_max_size = 10M

@@ -18,5 +18,5 @@ Vous pouvez trouver dans cette documentation l'ensemble des informations concern
 Azuriom, allant de l'installation à la création de plugins/thèmes en passant
 par la liaison serveur-site.
 
-Si vous avez besoin d'aide ou vous avez avez des questions vous pouvez rejoindre
+Si vous avez besoin d'aide ou vous avez des questions vous pouvez rejoindre
 notre [serveur Discord](https://azuriom.com/discord).

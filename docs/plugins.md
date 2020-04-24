@@ -54,7 +54,7 @@ contains the different information of a plugin:
 Each plugin must have an id, which must be unique and contain only numbers,
 lowercase letters and dashes. It is recommended to use the name as a basis for
 creating the id, for example if the name is `Hello World`, the id could be
-`hello-world`. Also the plugin's directory must have the same name as its id. 
+`hello-world`. Also, the plugin's directory must have the same name as its id. 
 
 > {info} To create a plugin you can use the following command that will
 automatically generate the plugin's folder and many files by
@@ -69,7 +69,7 @@ Routes allow you to associate a URL with a particular action.
 
 They are stored in the `routes' directory at the root of the plugin.
 
-For more informations on how routes work you can read the
+For more information on how routes work you can read the
 [Laravel documentation](https://laravel.com/docs/7.x/routing).
 
 Example:
@@ -90,8 +90,8 @@ The views are the visible part of a plugin, they are the content files HTML
 of the plugin to display a page.
 
 Azuriom using [Laravel](https://laravel.com/), views can be made using the Blade.
-If you don't master Blade it is highly recommended
-to read [its documentation](https://laravel.com/docs/7.x/blade), especially since it is quite short.
+If you don't master Blade it is highly recommended reading
+[its documentation](https://laravel.com/docs/7.x/blade), especially since it is quite short.
 
 > {warn} It is highly recommended NOT to use PHP syntax.
 when you work with Blade, because Blade does not bring you the traditional
@@ -125,7 +125,7 @@ and the title of the page in the `title` section.
 #### Admin view
 
 For a page to use the admin panel layout, just use the layout
-`admin.layouts.admin`, it is also recommended to create an admin folder
+`admin.layouts.admin`, it is also recommended creating an admin folder
 in the `resources` folder and put the admin views in it.
 
 ### Controllers
@@ -134,7 +134,7 @@ Controllers are a central part of a plugin, they are located in the folder
 `src/Controllers` at the root of the plugin, and they take care of
 to transform a request into the answer that will be sent back to the user.
 
-For more informations on how the controllers work you can read the
+For more information on how the controllers work you can read the
 [Laravel documentation](https://laravel.com/docs/7.x/controllers).
 
 example:
@@ -168,13 +168,13 @@ class TicketController extends Controller
 
 ### Models
 
-Templates represent an entry in a database table, and allow you to
-to interact with the database.
+Templates represent an entry in a database table, and allow you to interact with
+the database.
 
 You can also define in a model the different relationships of the model,
 For example, a `ticket` can have a `user` and a `category`, and have `comments`.
 
-You can find more informations about models (also called Eloquent on Laravel) in the
+You can find more information about models (also called Eloquent on Laravel) in the
 [Laravel documentation](https://laravel.com/docs/7.x/eloquent).
 
 ```php
@@ -255,7 +255,7 @@ Service providers must be added to the `providers` part of the `plugins.json`:
 }
 ```
 
-You can find more informations about the services provided in the
+You can find more information about the services provided in the
 [Laravel documentation](https://laravel.com/docs/7.x/providers).
 
 ```php
@@ -309,7 +309,7 @@ class SupportServiceProvider extends BasePluginServiceProvider
 Migrations allow you to create, modify or delete tables in the database.
 data, they can be found in the `database/migrations` folder.
 
-You can find more informations about migrations in the
+You can find more information about migrations in the
 [Laravel documentation](https://laravel.com/docs/7.x/migrations).
 
 ```php
@@ -359,7 +359,7 @@ Translations allow you to translate a plugin (amazing), they are found at
 in the `resources/lang` directory at the root of a plugin, in the 
 language folder (`en`, `fr`, etc...).
 
-You can find more informations on translations in the
+You can find more information on translations in the
 [Laravel documentation](https://laravel.com/docs/7.x/localization).
 
 To retrieve a translation you can use the

@@ -4,9 +4,9 @@
 
 Certaines fonctionnalités comme afficher les joueurs en
 ligne ou exécuter des commandes nécessitent de relier votre serveur à votre
-site web, sur Azuriom cela peut être fait de 3 facons différentes:
+site web, sur Azuriom cela peut être fait de 3 façons différentes :
 
-* Par Ping - **C'est la solution la plus simple, mais aussi la plus limitée**:
+* Par Ping - **C'est la solution la plus simple, mais aussi la plus limitée** :
 elle permet juste de récupérer les joueurs connectés du serveur
 _(ne permet pas d'exécuter des commandes)_.
 
@@ -14,12 +14,12 @@ _(ne permet pas d'exécuter des commandes)_.
 de du serveur et d'exécuter des commandes.
 
 * Par Plugin - **C'est la meilleure solution**, elle permet d'avoir les fonctionnalités du Rcon
-tout en ajoutant des fonctionnalités plus poussées _(exemple: un système de statistique avancé)_.
+tout en ajoutant des fonctionnalités plus poussées _(exemple : un système de statistique avancé)_.
 
 ## Liaison par Ping
 
 Pour pouvoir lier un serveur avec un site sous Azuriom par ping, 
-il faut justeajouter un nouveau serveur avec comme type de liaison "Ping"
+il faut juste ajouter un nouveau serveur avec comme type de liaison "Ping"
 et remplir les informations demandées _(le port par défaut de Minecraft est `25565`)_.
 
 ## Liaison par Rcon
@@ -35,7 +35,7 @@ Pour pouvoir lier un serveur avec un site sous Azuriom par Rcon, il faut:
     * Sauvegarder et redémarrer votre serveur
    
 1. Vous rendre sur votre site et ajouter un nouveau serveur avec comme type de liaison "Rcon"
-et remplir les informations demandées _(le port Rcon par defaut est `25575`)_.
+et remplir les informations demandées _(le port Rcon par défaut est `25575`)_.
 
 ## Liaison par plugin (AzLink)
 
@@ -50,7 +50,7 @@ Une version legacy est disponible pour les serveurs utilisant Bukkit 1.7.10.
 
 ### Installation
 
-1. Télécharcher AzLink sur [notre site](https://azuriom.com/azlink)
+1. Télécharger AzLink sur [notre site](https://azuriom.com/azlink)
 
 1. Installer AzLink sur le serveur en le mettant dans le dossier `plugins/`
 (ou `mods/` pour Sponge) et redémarrer le serveur.

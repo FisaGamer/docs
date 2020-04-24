@@ -1,7 +1,7 @@
 # AzAuth
 
 AzAuth est une api qui permet d'authentifier les utilisateurs d'un site sous Azuriom sur n'importe quelle plateforme
-(comme par exemple un launcher Minecraft personnalisé).
+(par exemple un launcher Minecraft personnalisé).
 
 ## Téléchargement
 
@@ -10,7 +10,7 @@ et le jar peut être téléchargé depuis
 [Sonatype OSS](https://oss.sonatype.org/service/local/repositories/snapshots/content/com/azuriom/azauth/1.0-SNAPSHOT/azauth-1.0-20200221.223801-1.jar).
 
 Si vous utilisez un gestionnaire de dépendances, vous pouvez ajouter AzAuth comme
-dépendance de la facon suivante:
+dépendance de la façon suivante :
 
 ### Gradle
 
@@ -59,7 +59,7 @@ Pour commencer, ajoutez AzAuth en dépendance à votre projet.
 Également si vous utilisez [OpenAuth](https://github.com/Litarvan/OpenAuth/), il est recommandé de le retirer,
 bien que ne causant pas de réels problèmes, il ne sera simplement plus utilisé si vous utilisez AzAuth.
 
-Vous devriez avoir dans le code de votre launcher une méthode `auth` ressemblant au code ci-dessous:
+Vous devriez avoir dans le code de votre launcher une méthode `auth` ressemblant au code ci-dessous :
 ```java
 public static void auth(String username, String password) throws AuthenticationException {
     Authenticator authenticator = new Authenticator(Authenticator.MOJANG_AUTH_URL, AuthPoints.NORMAL_AUTH_POINTS);
@@ -67,7 +67,7 @@ public static void auth(String username, String password) throws AuthenticationE
     authInfos = new AuthInfos(response.getSelectedProfile().getName(), response.getAccessToken(), response.getSelectedProfile().getId());
 }
 ```
-Il vous suffit de la remplacer par le code ci dessous, en remplaçant `<url>` par l'url de la racine de votre site sous Azuriom.
+Il vous suffit de la remplacer par le code ci-dessous, en remplaçant `<url>` par l'url de la racine de votre site sous Azuriom.
 ```java
 public static void auth(String username, String password) throws AuthenticationException, IOException {
     AzAuthenticator authenticator = new AzAuthenticator("<url>");
@@ -77,6 +77,10 @@ public static void auth(String username, String password) throws AuthenticationE
 Une fois ceci fait, il suffit d'importer les classes `AzAuthenticator` et
 `AuthenticationException` qui sont dans le package `com.azuriom.auth` et AzAuth sera
 intégré à votre launcher.
+
+Les catch d'une `AuthenticationException` doivent également être adaptés,
+et les usages de `e.getErrorModel().getErrorMessage()` peuvent être simplement 
+remplacés par `e.getMessage()`.
 
 ### Utilisation sans OpenLauncherLib
 

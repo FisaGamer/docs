@@ -3,7 +3,7 @@
 ## Prérequis
 
 Pour fonctionner, Azuriom nécessite simplement un **serveur web avec PHP** disposant d'au moins **100 MO**
-d'espace disque ainsi que des prérequis suivants:
+d'espace disque ainsi que des prérequis suivants :
 
  - PHP 7.2 ou plus récent
  - Réécriture d'URL
@@ -23,10 +23,10 @@ Il est également très fortement recommandé de posséder **une base de donnée
 
 ## Installation
 
-Azuriom peut être installé de deux façons différentes:
+Azuriom peut être installé de deux façons différentes :
 
 - De façon automatique grâce à l'installateur _(recommandé pour la plupart des utilisateurs)_ 
-- De façon manuelle via [Composer](https://getcomposer.org/) _(recommandé pour les utilisateurs experimentés ou souhaitant contribuer à Azuriom)_
+- De façon manuelle via [Composer](https://getcomposer.org/) _(recommandé pour les utilisateurs expérimentés ou souhaitant contribuer à Azuriom)_
 
 ### Installation Automatique
 
@@ -64,7 +64,7 @@ Azuriom peut être installé de deux façons différentes:
     ```
     
     Si l'utilisateur actuel n'est pas le même que l'utilisateur du serveur web,
-    il peut être nécessaire de changer le propriétaire des fichiers:
+    il peut être nécessaire de changer le propriétaire des fichiers :
     ```
     chown -R www-data:www-data /var/www/azuriom
     ```
@@ -81,12 +81,12 @@ Azuriom peut être installé de deux façons différentes:
         composer install --optimize-autoloader --no-dev
         ```
 
-1. Générer la clé secrète:
+1. Générer la clé secrète :
     ```
     php artisan key:generate
     ```
 
-1. Mettre en place la base de données:
+1. Mettre en place la base de données :
     ```
     php artisan migrate --seed
     ```
@@ -96,7 +96,7 @@ Azuriom peut être installé de deux façons différentes:
     php artisan storage:link
     ```
 
-1. Créer un compte administrateur _(Optionnel, mais très utile)_:
+1. Créer un compte administrateur _(Optionnel, mais très utile)_ :
     ```
     php artisan user:create --admin
     ```
@@ -118,7 +118,7 @@ Si jamais Azuriom est installé en local pour du développement (par exemple pou
 faire des thèmes/plugins), il est très fortement recommandé d'activer le debug
 afin de simplifier le développement.
 Cela peut se faire très simplement en modifiant ces 2 lignes dans le `.env` à la
-racine du site:
+racine du site :
 ```
 APP_ENV=local
 APP_DEBUG=true
@@ -135,7 +135,7 @@ déconseillé d'activer le debug et de configurer l'environnement de développem
 
 Si vous utilisez Apache 2, il peut être nécessaire d'activer la réécriture d'url.
 
-Pour cela, commencez par activer le mod "rewrite" avec la commande suivante:
+Pour cela, commencez par activer le mod "rewrite" avec la commande suivante :
 ```
 a2enmod rewrite
 ```
@@ -143,7 +143,7 @@ a2enmod rewrite
 Ensuite vous pouverz configurer le site pour autoriser la réécriture d'url.
 Il faut simplement modifier le fichier `/etc/apache2/sites-available/000-default.conf`
 et y ajouter les lignes suivantes entre les balises `<VirtualHost>` (en remplaçant
-`var/www/azuriom` par l'emplacement du site):
+`var/www/azuriom` par l'emplacement du site) :
 ```
 <Directory "/var/www/azuriom">
     Options FollowSymLinks
@@ -160,7 +160,7 @@ service apache2 restart
 ### Nginx
 
 Si vous déployez Azuriom sur un serveur qui utilise Nginx, vous pouvez utiliser
-la configuration suivante:
+la configuration suivante :
 
 ```
 server {

@@ -80,7 +80,7 @@ base dans le CMS ou dans un plugin, celle ci sera automatiquement utilisée.
 #### Layout
 
 Le layout est la structure de l'ensemble des pages d'un thème. Il contient
-en effet les metas, assets du thème, header, footer etc.
+en effet les metas, assets du thème, header, footer, etc.
 
 Pour définir le layout de la page, il faut que la vue étende la vue contenant
 le layout, vous pouvez soit utiliser le layout par défaut avec
@@ -113,7 +113,7 @@ Pour plus de détails sur l'authentification, vous pouvez vous référer à la
 #### Fonctions utiles
 
 Vous pouvez récupérer un certain nombre de paramètres du site via des fonctions
-dédiées:
+dédiées :
 
 |    Fonction      |             Description                |
 | ---------------- | -------------------------------------- |
@@ -126,11 +126,11 @@ dédiées:
 
 ### Traductions
 
-Un thème peut, si il en a besoin, charger des traductions.
+Un thème peut, s’il en a besoin, charger des traductions.
 
 Pour cela il suffit de créer un fichier `messages.php` dans le dossier `lang/<lang>` (ex: `lang/fr`)
 du thème, vous pouvez ensuite affichez une traduction via la fonction
-trans: `{{ trans('theme::messages.hello') }}` ou via la directive `@lang`: 
+`trans` : `{{ trans('theme::messages.hello') }}` ou via la directive `@lang`: 
 `@lang('theme::messages.hello')`.
 Vous pouvez également utiliser `trans_choice` pour une traduction comportant des
 nombres, et `trans_bool` pour traduire un boolean (retournera en français `Oui`
@@ -142,13 +142,13 @@ Pour plus de détails sur les traductions, vous pouvez vous référer à la
 ### Configuration
 
 Vous pouvez ajouter une configuration dans un thème, pour cela il vous suffit
-de créer à la racine du thème:
+de créer à la racine du thème :
 * Une vue `config/config.blade.php` contenant le form pour la configuration
 * Un fichier `config/rules.php` contenant les différentes règles de validation pour
 la configuration d'un thème.
-* Un fichier `config.json` ou sera stocké la configuration du thème, et contenant les valeurs par défaut 
+* Un fichier `config.json` où sera stocké la configuration du thème, et contenant les valeurs par défaut 
 
-##### Exemple:
+##### Exemple
 
 config.blade.php
 ```html

@@ -20,13 +20,13 @@ of disk space and the following requirements:
  - GD2 PHP Extension
  - Zip PHP Extension
 
-It's also highly recommended to have a **MySQL/MariaDB or PostgreSQL database**.
+It's also highly recommended having a **MySQL/MariaDB or PostgreSQL database**.
 
 ## Installation
 Azuriom can be installed in two different ways:
 
 - Automatically through the installer _(recommended for most users)_. 
-- Manually via [Composer](https://getcomposer.org/) _(recommended for experienced users or those wishing to contribute to Azuriom)_.
+- Manually via [Composer](https://getcomposer.org/) _(recommended for experienced users, or those wishing to contribute to Azuriom)_.
 
 ### Automatic Installation
 

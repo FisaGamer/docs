@@ -7,7 +7,7 @@ execute commands that require you to link your server to your
 website, on Azuriom this can be done in 3 different ways:
 
 * By Ping - **This is the simplest, but also the most limited solution**, it just allows you to get 
-the players connected to your server. _(does not allow to execute commands)_
+the players connected to your server. _(does not allow executing commands)_
 
 * By Rcon - **This is the intermediate solution**, it allows you to retrieve the information 
 of your server and execute commands.
@@ -18,7 +18,7 @@ but with more advanced functionalities _(example: an advanced statistics system)
 ## Link By Ping
 
 To be able to link your server with a site under Azuriom by ping, 
-you just have to add a new server with "Ping" as the link type.
+you just have to add a new server with "Ping" as the link type,
 and fill in the requested information _(the default port of Minecraft is `25565`)_.
 
 ## link by Rcon
@@ -34,7 +34,7 @@ You must:
     * Set `rcon.port` with `your-port` _(default 25575)_
     * Backup and restart your server
    
-1. Go to your site and add a new server with the link type "Rcon".
+1. Go to your site and add a new server with the link type "Rcon",
 and fill in the requested information. _(Default Rcon port is 25575)_.
 
 ## Plugin link

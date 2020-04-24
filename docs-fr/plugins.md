@@ -31,7 +31,7 @@ plugins/  <-- Dossier contenant les différents plugins installés
 ### Le fichier plugin.json
 
 Le fichier `plugin.json` est indispensable pour charger un plugin, et
-contient les différentes informations d'un plugin:
+contient les différentes informations d'un plugin :
 ```json
 {
     "id": "exemple",
@@ -104,7 +104,7 @@ par exemple `view('support::tickets.index')` pour afficher la vue `tickets.index
 du plugin support.
 
 Pour définir le layout de la page, il faut que la vue étende la vue contenant
-le layout, vous pouvez soit utiliser le layout par défaut (ou du thème si il y en a)
+le layout, vous pouvez soit utiliser le layout par défaut (ou du thème s’il y en a)
 avec `@extends('layouts.app')`, soit créer votre propre layout et l'étendre.
 
 Ensuite il faudra mettre tout le contenu principal au sein de la section `content`,
@@ -134,12 +134,12 @@ dans le dossier `resources` et d'y placer les vues admin dedans.
 
 Les contrôleurs sont une partie centrale d'un plugin, ils se trouvent dans le dossier
 `src/Controllers` à la racine du plugin et c'est eux qui s'occupent
-de transformer une reqûete en la réponse qui sera renvoyée à l'utilisateur.
+de transformer une requête en la réponse qui sera renvoyée à l'utilisateur.
 
 Pour plus d'informations sur le fonctionnement des contrôleurs vous pouvez lire la
 [documentation de Laravel](https://laravel.com/docs/7.x/controllers).
 
-Exemple:
+Exemple :
 ```php
 <?php
 
@@ -246,12 +246,12 @@ class Ticket extends Model
 
 ### Service Provider
 
-Les services providers sont le coeur d'un plugin, ils sont appelés à l'initialisation
+Les services providers sont le cœur d'un plugin, ils sont appelés à l'initialisation
 de Laravel, et permettent d'enregistrer les différentes parties d'un plugin (vues, traductions, middlewares, etc).
 
 Les services providers doivent être ajoutés dans la partie `providers` du `plugins.json`.
 
-Exemple:
+Exemple :
 ```json
 {
     "providers": [
@@ -370,7 +370,7 @@ Vous pouvez trouver plus d'informations sur les traductions dans la
 Pour récupérer une traduction vous pouvez utiliser la fonction
 `trans('<id du plugin>::<nom du fichier>.<message>')`, par exemple
 `trans('support::messages.tickets.home')` pour afficher le message `tickets.home`,
-dans le fichier `messages.php` du plugin support:
+dans le fichier `messages.php` du plugin support :
 ```php
 <?php
 
