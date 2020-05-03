@@ -21,6 +21,17 @@ d'espace disque ainsi que des prérequis suivants :
 
 Il est également très fortement recommandé de posséder **une base de données MySQL/MariaDB ou PostgreSQL**.
 
+## Hébergeurs
+
+Azuriom peut être installé sur n'importe quel VPS ou serveur dédié ainsi que sur
+la majorité des hébergeurs web ayant les prérequis ci-dessus, cependant certains
+hébergeurs ne sont pas compatibles :
+* [000webhost](https://www.000webhost.com/) : Incompatible (La fonction `putenv()` est désactivée)
+* [InovaPerf](https://inovaperf.fr/) : Incompatible avec l'offre gratuite (La fonction `fsockopen()` est désactivée)
+
+Si vous recherchez un hébergeur web associatif performant à petit prix, nous
+vous recommandons notre partenaire [NiHost](https://www.ni-host.com/).
+
 ## Installation
 
 Azuriom peut être installé de deux façons différentes :
