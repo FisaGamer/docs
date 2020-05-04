@@ -23,7 +23,7 @@ repositories {
 ```
 ```groovy
 dependencies {
-    implementation 'com.azuriom:azauth:1.0.0-SNAPSHOT'
+    implementation 'com.azuriom:azauth:1.0-SNAPSHOT'
 }
 ```
 
@@ -43,7 +43,7 @@ in `pom.xml`:
     <dependency>
         <groupId>com.azuriom</groupId>
         <artifactId>azauth</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
         <scope>compile</scope>
     </dependency>
 </dependencies>
