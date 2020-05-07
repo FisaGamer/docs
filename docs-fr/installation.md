@@ -31,6 +31,7 @@ hébergeurs ne sont pas compatibles :
 * [BoxToPlay](https://www.boxtoplay.com/) : Incompatible (Extensions BCMath et XML manquantes)
 et très fortement déconseillé pour un serveur MineCraft.
 * [mTxServ](https://mtxserv.com/) : Incompatible (La fonction `symlink()` est désactivée).
+* [LiveHost](https://www.livehost.fr/) : Incompatible (La fonction `symlink()` est désactivée).
 
 Si vous recherchez un hébergeur web associatif **performant à petit prix**, nous
 vous recommandons notre partenaire [NiHost](https://www.ni-host.com/).
