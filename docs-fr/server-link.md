@@ -2,19 +2,21 @@
 
 ## Introduction
 
-Certaines fonctionnalités comme afficher les joueurs en
-ligne ou exécuter des commandes nécessitent de relier votre serveur à votre
-site web, sur Azuriom cela peut être fait de 3 façons différentes :
+Il est nécesaire pour certaines fonctionnalités du site web d'activer
+la liaison de votre site web et de votre/vos serveurs Minecraft. Sur
+Azuriom, vous pouvez lier votre serveur Minecraft de différentes facons:
 
 * Par Ping - **C'est la solution la plus simple, mais aussi la plus limitée** :
-elle permet juste de récupérer les joueurs connectés du serveur
+Le ping permet juste de récupérer le nombre de joueurs connectés au serveur
 _(ne permet pas d'exécuter des commandes)_.
 
-* Par Rcon - **C'est la solution intermédiaire**, elle permet de récupérer les informations 
-de du serveur et d'exécuter des commandes.
+* Par Rcon - **C'est la solution intermédiaire** :
+La liaison rcon permet d'éxecuter des commandes et de récupérer certaines informations cruciales
+comme le nombre de joueur ou encore le tps du serveur.
 
-* Par Plugin - **C'est la meilleure solution**, elle permet d'avoir les fonctionnalités du Rcon
-tout en ajoutant des fonctionnalités plus poussées _(exemple : un système de statistique avancé)_.
+* Par Plugin - **C'est la meilleure solution** :
+Le plugin azauth rend la liaison avec le serveur très simple et 
+efficace et permet d'avoir accès à toutes les fonctionnalités du site
 
 ## Liaison par Ping
 
